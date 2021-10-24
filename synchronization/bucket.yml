@@ -2,8 +2,8 @@ flows:
   81308758-e2c2-4d5d-b3a7-6c5b02cc8360: {ver: 6, file: raster-synchronization.snapshot,
     comments: '', author: anonymous, created: 1634723556352, flowName: raster-synchronization,
     flowDesc: ''}
-  b601da45-e15c-49b5-92f6-7f69054b95f4: {ver: 3, file: RasterSynchronization.snapshot,
-    comments: sync recive, author: anonymous, created: 1634814550621, flowName: RasterSynchronization,
-    flowDesc: ''}
+  b601da45-e15c-49b5-92f6-7f69054b95f4: {ver: 4, file: RasterSynchronization.snapshot,
+    comments: fixed task id parsing error, author: anonymous, created: 1635054434882,
+    flowName: RasterSynchronization, flowDesc: ''}
 layoutVer: 1
 bucketId: 83500b58-9f3b-41a2-b6bb-27b9ab594bb6
