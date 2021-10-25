@@ -2296,7 +2296,7 @@
               "name" : "",
               "partitioningAttribute" : "",
               "prioritizers" : [ ],
-              "selectedRelationships" : [ "Retry" ],
+              "selectedRelationships" : [ "Retry", "Failure" ],
               "source" : {
                 "comments" : "",
                 "groupId" : "f5651f73-2657-34ab-87e5-b713ef43121a",
@@ -2867,7 +2867,7 @@
               "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
               "yieldDuration" : "1 sec"
             }, {
-              "autoTerminatedRelationships" : [ "Original", "Failure" ],
+              "autoTerminatedRelationships" : [ "Original" ],
               "bulletinLevel" : "WARN",
               "bundle" : {
                 "artifact" : "nifi-standard-nar",
@@ -3471,7 +3471,7 @@
               "name" : "",
               "partitioningAttribute" : "",
               "prioritizers" : [ ],
-              "selectedRelationships" : [ "Retry" ],
+              "selectedRelationships" : [ "Retry", "Failure" ],
               "source" : {
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
@@ -4042,7 +4042,7 @@
               "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
               "yieldDuration" : "1 sec"
             }, {
-              "autoTerminatedRelationships" : [ "Original", "Failure" ],
+              "autoTerminatedRelationships" : [ "Original" ],
               "bulletinLevel" : "WARN",
               "bundle" : {
                 "artifact" : "nifi-standard-nar",
@@ -4404,7 +4404,7 @@
             "name" : "",
             "partitioningAttribute" : "",
             "prioritizers" : [ ],
-            "selectedRelationships" : [ "Retry" ],
+            "selectedRelationships" : [ "Retry", "Failure" ],
             "source" : {
               "comments" : "",
               "groupId" : "e130e634-b3c0-3d8d-a2e9-a06db5543808",
@@ -4805,7 +4805,7 @@
             "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
             "yieldDuration" : "1 sec"
           }, {
-            "autoTerminatedRelationships" : [ "Response", "No Retry", "Original", "Failure" ],
+            "autoTerminatedRelationships" : [ "Response", "No Retry", "Original" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-standard-nar",
@@ -5229,7 +5229,7 @@
             "name" : "",
             "partitioningAttribute" : "",
             "prioritizers" : [ ],
-            "selectedRelationships" : [ "Retry" ],
+            "selectedRelationships" : [ "Retry", "Failure" ],
             "source" : {
               "comments" : "",
               "groupId" : "b0f91043-2bc6-373e-bd31-91e35ced1086",
@@ -5849,7 +5849,7 @@
             "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
             "yieldDuration" : "1 sec"
           }, {
-            "autoTerminatedRelationships" : [ "Response", "Original", "Failure" ],
+            "autoTerminatedRelationships" : [ "Response", "Original" ],
             "bulletinLevel" : "WARN",
             "bundle" : {
               "artifact" : "nifi-standard-nar",
