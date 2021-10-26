@@ -1,0 +1,131 @@
+{
+  "header" : {
+    "dataModelVersion" : "3"
+  },
+  "content" : {
+    "flowSnapshot" : {
+      "externalControllerServices" : { },
+      "flowContents" : {
+        "comments" : "",
+        "componentType" : "PROCESS_GROUP",
+        "connections" : [ {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
+            "id" : "730f63da-c555-3df5-ae82-ae6341f6d181",
+            "name" : "allTilesIngested",
+            "type" : "INPUT_PORT"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "identifier" : "73e40770-ffc9-3330-93c6-702606b214b1",
+          "labelIndex" : 1,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "" ],
+          "source" : {
+            "comments" : "",
+            "groupId" : "f4b1efce-5784-31bc-bc78-215359e7251a",
+            "id" : "635dca88-8a40-3ab0-8a0e-bec608990dcc",
+            "name" : "allTilesRecived",
+            "type" : "OUTPUT_PORT"
+          },
+          "zIndex" : 0
+        } ],
+        "controllerServices" : [ ],
+        "defaultBackPressureDataSizeThreshold" : "1 GB",
+        "defaultBackPressureObjectThreshold" : 10000,
+        "defaultFlowFileExpiration" : "0 sec",
+        "flowFileConcurrency" : "UNBOUNDED",
+        "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+        "funnels" : [ ],
+        "identifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+        "inputPorts" : [ ],
+        "labels" : [ ],
+        "name" : "raster",
+        "outputPorts" : [ ],
+        "position" : {
+          "x" : 903.2471405079003,
+          "y" : 1251.9161739421525
+        },
+        "processGroups" : [ {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ ],
+          "controllerServices" : [ ],
+          "defaultBackPressureDataSizeThreshold" : "1 GB",
+          "defaultBackPressureObjectThreshold" : 10000,
+          "defaultFlowFileExpiration" : "0 sec",
+          "flowFileConcurrency" : "UNBOUNDED",
+          "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+          "funnels" : [ ],
+          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "identifier" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
+          "inputPorts" : [ ],
+          "labels" : [ ],
+          "name" : "RasterIngestion",
+          "outputPorts" : [ ],
+          "parameterContextName" : "rasterIngestionParamersContext",
+          "position" : {
+            "x" : -48.0,
+            "y" : 232.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ ],
+          "remoteProcessGroups" : [ ],
+          "variables" : { },
+          "versionedFlowCoordinates" : {
+            "bucketId" : "869899cc-0ff9-4b9e-bd84-b6cf402912de",
+            "flowId" : "57511524-295d-41c6-85a2-1155ba821f06",
+            "registryUrl" : "http://localhost:18080",
+            "version" : 2
+          }
+        }, {
+          "comments" : "",
+          "componentType" : "PROCESS_GROUP",
+          "connections" : [ ],
+          "controllerServices" : [ ],
+          "defaultBackPressureDataSizeThreshold" : "1 GB",
+          "defaultBackPressureObjectThreshold" : 10000,
+          "defaultFlowFileExpiration" : "0 sec",
+          "flowFileConcurrency" : "UNBOUNDED",
+          "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+          "funnels" : [ ],
+          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "identifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
+          "inputPorts" : [ ],
+          "labels" : [ ],
+          "name" : "RasterSynchronization",
+          "outputPorts" : [ ],
+          "parameterContextName" : "rasterSynchronizationParamContext",
+          "position" : {
+            "x" : 672.0,
+            "y" : 232.0
+          },
+          "processGroups" : [ ],
+          "processors" : [ ],
+          "remoteProcessGroups" : [ ],
+          "variables" : { },
+          "versionedFlowCoordinates" : {
+            "bucketId" : "83500b58-9f3b-41a2-b6bb-27b9ab594bb6",
+            "flowId" : "630b963e-5f88-443f-a4ff-7b3268d7a237",
+            "registryUrl" : "http://localhost:18080",
+            "version" : 2
+          }
+        } ],
+        "processors" : [ ],
+        "remoteProcessGroups" : [ ],
+        "variables" : { }
+      },
+      "flowEncodingVersion" : "1.0",
+      "parameterContexts" : { }
+    }
+  }
+}
