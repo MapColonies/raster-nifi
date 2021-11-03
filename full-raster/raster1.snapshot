@@ -52,8 +52,8 @@
         "name" : "raster",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 903.2471405079003,
-          "y" : 1251.9161739421525
+          "x" : 792.0,
+          "y" : 712.0
         },
         "processGroups" : [ {
           "comments" : "",
@@ -85,7 +85,7 @@
             "bucketId" : "869899cc-0ff9-4b9e-bd84-b6cf402912de",
             "flowId" : "57511524-295d-41c6-85a2-1155ba821f06",
             "registryUrl" : "http://localhost:18080",
-            "version" : 2
+            "version" : 3
           }
         }, {
           "comments" : "",
