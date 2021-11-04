@@ -1187,7 +1187,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
+              "scheduledState" : "DISABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -1232,7 +1232,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
+              "scheduledState" : "DISABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -1296,7 +1296,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
+              "scheduledState" : "DISABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -1376,7 +1376,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
+              "scheduledState" : "DISABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -1440,7 +1440,7 @@
                 }
               },
               "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
+              "scheduledState" : "DISABLED",
               "schedulingPeriod" : "0 sec",
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
@@ -1508,7 +1508,7 @@
               }
             },
             "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
+            "scheduledState" : "DISABLED",
             "schedulingPeriod" : "0 sec",
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
@@ -1588,7 +1588,7 @@
               }
             },
             "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
+            "scheduledState" : "DISABLED",
             "schedulingPeriod" : "0 sec",
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
@@ -1731,7 +1731,7 @@
               }
             },
             "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
+            "scheduledState" : "DISABLED",
             "schedulingPeriod" : "0 sec",
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
@@ -1811,7 +1811,7 @@
               }
             },
             "runDurationMillis" : 0,
-            "scheduledState" : "ENABLED",
+            "scheduledState" : "DISABLED",
             "schedulingPeriod" : "0 sec",
             "schedulingStrategy" : "TIMER_DRIVEN",
             "style" : { },
@@ -6287,7 +6287,7 @@
               "name" : "Module Directory",
               "resourceDefinition" : {
                 "cardinality" : "MULTIPLE",
-                "resourceTypes" : [ "FILE", "DIRECTORY" ]
+                "resourceTypes" : [ "DIRECTORY", "FILE" ]
               },
               "sensitive" : false
             }
@@ -6360,7 +6360,7 @@
               "name" : "Module Directory",
               "resourceDefinition" : {
                 "cardinality" : "MULTIPLE",
-                "resourceTypes" : [ "FILE", "DIRECTORY" ]
+                "resourceTypes" : [ "DIRECTORY", "FILE" ]
               },
               "sensitive" : false
             },
