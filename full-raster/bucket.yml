@@ -1,6 +1,6 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 3, file: raster1.snapshot, comments: disabled
-      nifi v1.14 link builder, author: anonymous, created: 1636009174570, flowName: raster1,
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 4, file: raster1.snapshot, comments: fixed
+      sync file received task update, author: anonymous, created: 1636024023939, flowName: raster1,
     flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
