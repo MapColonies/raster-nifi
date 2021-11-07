@@ -12742,7 +12742,7 @@
                 },
                 "properties" : {
                   "Destination" : "flowfile-attribute",
-                  "expectedTilesCount" : "$.expectedTilesCount",
+                  "expectedTilesCount" : "$.parameters.tileCount",
                   "Return Type" : "scalar",
                   "Null Value Representation" : "empty string",
                   "Path Not Found Behavior" : "ignore"
