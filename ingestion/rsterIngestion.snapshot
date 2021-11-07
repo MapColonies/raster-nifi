@@ -17,7 +17,7 @@
             "comments" : "",
             "groupId" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
             "id" : "c8c86ac8-c898-307a-9e2e-c8d32292232a",
-            "name" : " generateLinksScript",
+            "name" : " generatePublishingAttributesScript",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
@@ -77,7 +77,7 @@
             "comments" : "",
             "groupId" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
             "id" : "c8c86ac8-c898-307a-9e2e-c8d32292232a",
-            "name" : " generateLinksScript",
+            "name" : " generatePublishingAttributesScript",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
@@ -124,7 +124,7 @@
             "comments" : "",
             "groupId" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
             "id" : "c8c86ac8-c898-307a-9e2e-c8d32292232a",
-            "name" : " generateLinksScript",
+            "name" : " generatePublishingAttributesScript",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -304,7 +304,7 @@
             "comments" : "",
             "groupId" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
             "id" : "c8c86ac8-c898-307a-9e2e-c8d32292232a",
-            "name" : " generateLinksScript",
+            "name" : " generatePublishingAttributesScript",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -2005,11 +2005,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "7ae05cdc-96b0-3a73-9d52-1698d0580b25",
-            "identifier" : "c107d606-7f7b-3c60-a7c6-a42f9c5d88c4",
-            "name" : "done",
+            "identifier" : "c4e25dcf-0d9a-3d22-8bc0-5d543d83249a",
+            "name" : "fail",
             "position" : {
-              "x" : 688.0,
-              "y" : 816.0
+              "x" : 1390.9554461870048,
+              "y" : 500.1785648309059
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -2018,11 +2018,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "7ae05cdc-96b0-3a73-9d52-1698d0580b25",
-            "identifier" : "c4e25dcf-0d9a-3d22-8bc0-5d543d83249a",
-            "name" : "fail",
+            "identifier" : "c107d606-7f7b-3c60-a7c6-a42f9c5d88c4",
+            "name" : "done",
             "position" : {
-              "x" : 1390.9554461870048,
-              "y" : 500.1785648309059
+              "x" : 688.0,
+              "y" : 816.0
             },
             "type" : "OUTPUT_PORT"
           } ],
@@ -3355,7 +3355,7 @@
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
                 "id" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-                "name" : "updateTask",
+                "name" : "publishToMapServer",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -3385,7 +3385,7 @@
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
                 "id" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-                "name" : "updateTask",
+                "name" : "publishToMapServer",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -3511,7 +3511,7 @@
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
                 "id" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-                "name" : "updateTask",
+                "name" : "publishToMapServer",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -3554,7 +3554,7 @@
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
                 "id" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-                "name" : "updateTask",
+                "name" : "publishToMapServer",
                 "type" : "PROCESSOR"
               },
               "flowFileExpiration" : "0 sec",
@@ -3593,7 +3593,7 @@
                 "comments" : "",
                 "groupId" : "46f36a06-5574-3533-8d75-eb5181af2fef",
                 "id" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-                "name" : "updateTask",
+                "name" : "publishToMapServer",
                 "type" : "PROCESSOR"
               },
               "flowFileExpiration" : "0 sec",
@@ -3838,7 +3838,7 @@
               },
               "properties" : {
                 "Regular Expression" : "(?s)(^.*$)",
-                "Replacement Value" : "{\n  \"cacheType\": \"${}\",\n  \"name\": \"amsterdam_5cm\",\n  \"tilesPath\": \"/path/to/tiles/directory/in/bucket/\",\n  \"maxZoomLevel\": 18,\n  \"description\": \"description for amsterdam layer\"\n}",
+                "Replacement Value" : "{\n  \"cacheType\": \"#{mapProxycacheType}\",\n  \"name\": \"${layerName}\",\n  \"tilesPath\": \"${tilesRelativePath}\",\n  \"maxZoomLevel\": ${layerZoom},\n  \"description\": \"${layerDescription}\"\n}",
                 "Evaluation Mode" : "Entire text",
                 "Line-by-Line Evaluation Mode" : "All",
                 "Character Set" : "UTF-8",
@@ -4090,7 +4090,7 @@
               "executionNode" : "ALL",
               "groupIdentifier" : "46f36a06-5574-3533-8d75-eb5181af2fef",
               "identifier" : "b9cf1ed9-9397-354a-b5ae-1dfca99ab3d4",
-              "name" : "updateTask",
+              "name" : "publishToMapServer",
               "penaltyDuration" : "0 sec",
               "position" : {
                 "x" : 352.0,
@@ -4108,14 +4108,14 @@
                 "idle-timeout" : "5 mins",
                 "Use Chunked Encoding" : "false",
                 "Follow Redirects" : "True",
-                "Remote URL" : "#{jobManagerUrl}/jobs/${jobId}/tasks/${taskId}",
+                "Remote URL" : "#{mapServerApiUrl}/layer",
                 "Content-Type" : "${mime.type}",
                 "max-idle-connections" : "5",
                 "Read Timeout" : "15 secs",
                 "Max Length To Put In Attribute" : "256",
                 "ignore-response-content" : "false",
                 "Digest Authentication" : "false",
-                "HTTP Method" : "PUT",
+                "HTTP Method" : "POST",
                 "Add Response Headers to Request" : "false",
                 "Include Date Header" : "True",
                 "Penalize on \"No Retry\"" : "false"
@@ -6313,7 +6313,7 @@
           "executionNode" : "ALL",
           "groupIdentifier" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
           "identifier" : "c8c86ac8-c898-307a-9e2e-c8d32292232a",
-          "name" : " generateLinksScript",
+          "name" : " generatePublishingAttributesScript",
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 720.0,
@@ -6321,7 +6321,7 @@
           },
           "properties" : {
             "Script Engine" : "python",
-            "Script Body" : "flowFile = session.get() \nif (flowFile != None):\n  mapServerUrl = publicMapServerUrl.getValue()\n  linksTemplate = linksTemplateParam.getValue()\n  metadata = json.load(flowFile.getAttribute('metadata'))\n  metadata['layerName'] = '{0}-{1}'.format(metadata['productId'], metadata['productType']) if metadata['productType'] == 'Orthophoto' else '{0}-{1}-{2}'.format(metadata['productId'], metadata['productVersion'], metadata['productType'])\n  links = linksTemplate.format(**metadata)\n  flowFile = session.putAttribute(flowFile, 'links', links)\n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)\n",
+            "Script Body" : "from math import log2, ceil\nflowFile = session.get() \nif (flowFile != None):\n  mapServerUrl = publicMapServerUrl.getValue()\n  linksTemplate = linksTemplateParam.getValue()\n  metadata = json.load(flowFile.getAttribute('metadata'))\n  \n  #crate layer name if not exists\n  layerName = flowFile.getAttribute('layerName')\n  if (not layerName):\n    layerName = '{0}-{1}'.format(metadata['productId'], metadata['productType']) if metadata['productType'] == 'Orthophoto' else '{0}-{1}-{2}'.format(metadata['productId'], metadata['productVersion'], metadata['productType'])\n    flowFile = session.putAttribute(flowFile, 'layerName', layerName)\n\n  #build links\n  metadata['layerName'] = layerName\n  links = linksTemplate.format(**metadata)\n  flowFile = session.putAttribute(flowFile, 'links', links)\n\n  #parse description\n  flowFile = session.putAttribute(flowFile, 'layerDescription', metadata['description'])\n\n  #calculate zoom from resolution\n  res = metadata['resolution']\n  tiles = 180 / (res * 256)\n  zoom = ceil(log2(tiles))\n  flowFile = session.putAttribute(flowFile, 'layerZoom', zoom)\n\n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)\n",
             "publicMapServerUrl" : "#{publicMapServerUrl}",
             "linksTemplateParam" : "#{linksTemplate}"
           },
@@ -6390,7 +6390,7 @@
             "description" : "",
             "name" : "jobManagerUrl",
             "sensitive" : false,
-            "value" : "http://localhost:8083"
+            "value" : "http://localhost:30010"
           }, {
             "description" : "",
             "name" : "maxHttpRetries",
@@ -6400,7 +6400,7 @@
             "description" : "",
             "name" : "sleepPath",
             "sensitive" : false,
-            "value" : "/bin/sleep"
+            "value" : "timeout"
           }, {
             "description" : "",
             "name" : "HttpRetryDelaySec",
@@ -6421,6 +6421,11 @@
             "name" : "publicMapServerUrl",
             "sensitive" : false,
             "value" : "http://mapProxyPublicUrl"
+          }, {
+            "description" : "",
+            "name" : "mapServerApiUrl",
+            "sensitive" : false,
+            "value" : "http://localhost:30002"
           }, {
             "description" : "",
             "name" : "linksTemplate",
