@@ -1195,6 +1195,39 @@
             "backPressureDataSizeThreshold" : "1 GB",
             "backPressureObjectThreshold" : 10000,
             "bends" : [ {
+              "x" : 184.0,
+              "y" : 1832.0
+            } ],
+            "componentType" : "CONNECTION",
+            "destination" : {
+              "comments" : "",
+              "groupId" : "1f7af71c-e148-3444-8325-bcb83fef461e",
+              "id" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
+              "name" : "succuss",
+              "type" : "OUTPUT_PORT"
+            },
+            "flowFileExpiration" : "0 sec",
+            "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
+            "identifier" : "9617ffd1-7bb7-315f-a651-bed59f74bacf",
+            "labelIndex" : 0,
+            "loadBalanceCompression" : "DO_NOT_COMPRESS",
+            "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+            "name" : "",
+            "partitioningAttribute" : "",
+            "prioritizers" : [ ],
+            "selectedRelationships" : [ "" ],
+            "source" : {
+              "comments" : "",
+              "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+              "id" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
+              "name" : "done",
+              "type" : "OUTPUT_PORT"
+            },
+            "zIndex" : 0
+          }, {
+            "backPressureDataSizeThreshold" : "1 GB",
+            "backPressureObjectThreshold" : 10000,
+            "bends" : [ {
               "x" : 1264.0,
               "y" : 1888.0
             } ],
