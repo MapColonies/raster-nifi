@@ -2005,11 +2005,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "7ae05cdc-96b0-3a73-9d52-1698d0580b25",
-            "identifier" : "c4e25dcf-0d9a-3d22-8bc0-5d543d83249a",
-            "name" : "fail",
+            "identifier" : "c107d606-7f7b-3c60-a7c6-a42f9c5d88c4",
+            "name" : "done",
             "position" : {
-              "x" : 1390.9554461870048,
-              "y" : 500.1785648309059
+              "x" : 688.0,
+              "y" : 816.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -2018,11 +2018,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "7ae05cdc-96b0-3a73-9d52-1698d0580b25",
-            "identifier" : "c107d606-7f7b-3c60-a7c6-a42f9c5d88c4",
-            "name" : "done",
+            "identifier" : "c4e25dcf-0d9a-3d22-8bc0-5d543d83249a",
+            "name" : "fail",
             "position" : {
-              "x" : 688.0,
-              "y" : 816.0
+              "x" : 1390.9554461870048,
+              "y" : 500.1785648309059
             },
             "type" : "OUTPUT_PORT"
           } ],
@@ -6287,7 +6287,7 @@
               "name" : "Module Directory",
               "resourceDefinition" : {
                 "cardinality" : "MULTIPLE",
-                "resourceTypes" : [ "DIRECTORY", "FILE" ]
+                "resourceTypes" : [ "FILE", "DIRECTORY" ]
               },
               "sensitive" : false
             }
@@ -6321,7 +6321,7 @@
           },
           "properties" : {
             "Script Engine" : "python",
-            "Script Body" : "from math import log2, ceil\nflowFile = session.get() \nif (flowFile != None):\n  mapServerUrl = publicMapServerUrl.getValue()\n  linksTemplate = linksTemplateParam.getValue()\n  metadata = json.load(flowFile.getAttribute('metadata'))\n  \n  #crate layer name if not exists\n  layerName = flowFile.getAttribute('layerName')\n  if (not layerName):\n    layerName = '{0}-{1}'.format(metadata['productId'], metadata['productType']) if metadata['productType'] == 'Orthophoto' else '{0}-{1}-{2}'.format(metadata['productId'], metadata['productVersion'], metadata['productType'])\n    flowFile = session.putAttribute(flowFile, 'layerName', layerName)\n\n  #build links\n  metadata['layerName'] = layerName\n  links = linksTemplate.format(**metadata)\n  flowFile = session.putAttribute(flowFile, 'links', links)\n\n  #parse description\n  flowFile = session.putAttribute(flowFile, 'layerDescription', metadata['description'])\n\n  #calculate zoom from resolution\n  res = metadata['resolution']\n  tiles = 180 / (res * 256)\n  zoom = ceil(log2(tiles))\n  flowFile = session.putAttribute(flowFile, 'layerZoom', zoom)\n\n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)\n",
+            "Script Body" : "import math\nimport json\n\nflowFile = session.get() \nif (flowFile != None):\n  mapServerUrl = publicMapServerUrl.getValue()\n  linksTemplate = linksTemplateParam.getValue()\n  \n  #load metadata\n  metadataStr = flowFile.getAttribute('metadata')\n  metadata = json.loads(metadataStr)\n  \n  #create layer name if not exits\n  try:\n    layerName = flowFile.getAttribute('layerName')\n  finally:\n    if (not layerName):\n      layerName = '{0}-{1}'.format(metadata['productId'], metadata['productType']) if metadata['productType'] == 'Orthophoto' else '{0}-{1}-{2}'.format(metadata['productId'], metadata['productVersion'], metadata['productType'])\n      flowFile = session.putAttribute(flowFile, 'layerName', layerName)\n  \n  #add calculated values to be use as template keys\n  metadata['serverUrl'] = mapServerUrl\n  metadata['layerName'] = layerName\n\n  #generate links\n  links = linksTemplate.format(**metadata)\n  flowFile = session.putAttribute(flowFile, 'links', links)\n  \n  # parse layer description\n  flowFile = session.putAttribute(flowFile, 'layerDescription', metadata['description'])\n  \n  #calculate zoom\n  res = metadata['resolution']\n  tiles = 180 / (res * 256)\n  zoom = math.ceil(math.log(tiles,2))\n  flowFile = session.putAttribute(flowFile, 'layerZoom', str(zoom))\n  \n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)",
             "publicMapServerUrl" : "#{publicMapServerUrl}",
             "linksTemplateParam" : "#{linksTemplate}"
           },
@@ -6360,7 +6360,7 @@
               "name" : "Module Directory",
               "resourceDefinition" : {
                 "cardinality" : "MULTIPLE",
-                "resourceTypes" : [ "DIRECTORY", "FILE" ]
+                "resourceTypes" : [ "FILE", "DIRECTORY" ]
               },
               "sensitive" : false
             },
@@ -6418,19 +6418,19 @@
             "value" : "s3"
           }, {
             "description" : "",
-            "name" : "publicMapServerUrl",
-            "sensitive" : false,
-            "value" : "http://mapProxyPublicUrl"
-          }, {
-            "description" : "",
             "name" : "mapServerApiUrl",
             "sensitive" : false,
             "value" : "http://localhost:30002"
           }, {
             "description" : "",
+            "name" : "publicMapServerUrl",
+            "sensitive" : false,
+            "value" : "http://mapProxyPublicUrl"
+          }, {
+            "description" : "",
             "name" : "linksTemplate",
             "sensitive" : false,
-            "value" : "[\n  {\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMS\",\n    \"url\": \"{serverUrl}/service?REQUEST=GetCapabilities\"\n  },\n  {\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMTS\",\n    \"url\": \"{serverUrl}/wmts/1.0.0/WMTSCapabilities.xml\"\n  },\n  {\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMTS_LAYER\",\n    \"url\": \"{serverUrl}/wmts/{layerName}/{{TileMatrixSet}}/{{TileMatrix}}/{{TileCol}}/{{TileRow}}.png\"\n  }\n]\n"
+            "value" : "[\n  {{\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMS\",\n    \"url\": \"{serverUrl}/service?REQUEST=GetCapabilities\"\n  }},\n  {{\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMTS\",\n    \"url\": \"{serverUrl}/wmts/1.0.0/WMTSCapabilities.xml\"\n  }},\n  {{\n    \"name\": \"{layerName}\",\n    \"description\": \"\",\n    \"protocol\": \"WMTS_LAYER\",\n    \"url\": \"{serverUrl}/wmts/{layerName}/{{TileMatrixSet}}/{{TileMatrix}}/{{TileCol}}/{{TileRow}}.png\"\n  }}\n]"
           } ]
         }
       }
