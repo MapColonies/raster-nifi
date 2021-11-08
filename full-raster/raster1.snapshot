@@ -85,7 +85,7 @@
             "bucketId" : "869899cc-0ff9-4b9e-bd84-b6cf402912de",
             "flowId" : "57511524-295d-41c6-85a2-1155ba821f06",
             "registryUrl" : "http://localhost:18080",
-            "version" : 4
+            "version" : 7
           }
         }, {
           "comments" : "",
@@ -117,7 +117,7 @@
             "bucketId" : "83500b58-9f3b-41a2-b6bb-27b9ab594bb6",
             "flowId" : "630b963e-5f88-443f-a4ff-7b3268d7a237",
             "registryUrl" : "http://localhost:18080",
-            "version" : 3
+            "version" : 7
           }
         } ],
         "processors" : [ ],
