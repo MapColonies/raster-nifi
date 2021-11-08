@@ -1,6 +1,6 @@
 flows:
-  57511524-295d-41c6-85a2-1155ba821f06: {ver: 6, file: rsterIngestion.snapshot, comments: fixed
-      version generation script, author: anonymous, created: 1636351404331, flowName: rsterIngestion,
+  57511524-295d-41c6-85a2-1155ba821f06: {ver: 7, file: rsterIngestion.snapshot, comments: fixed
+      sync ingestion, author: anonymous, created: 1636355647713, flowName: rsterIngestion,
     flowDesc: raster ingestion flow}
 layoutVer: 1
 bucketId: 869899cc-0ff9-4b9e-bd84-b6cf402912de

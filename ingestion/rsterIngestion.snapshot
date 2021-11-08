@@ -2605,7 +2605,7 @@
               },
               "properties" : {
                 "Regular Expression" : "(?s)(^.*$)",
-                "Replacement Value" : "{\n  \"metadata\": ${layerMetadata},\n  \"links\": ${layerLinks}\n}",
+                "Replacement Value" : "{\n  \"metadata\": ${metadata},\n  \"links\": ${links}\n}",
                 "Evaluation Mode" : "Entire text",
                 "Line-by-Line Evaluation Mode" : "All",
                 "Character Set" : "UTF-8",
