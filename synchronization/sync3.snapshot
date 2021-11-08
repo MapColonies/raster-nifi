@@ -717,17 +717,17 @@
         }, {
           "componentType" : "FUNNEL",
           "groupIdentifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
-          "identifier" : "790549c4-1414-3581-b99e-3800c711073f",
+          "identifier" : "7a423195-a794-3164-b7a0-58eed4be600d",
           "position" : {
-            "x" : 1240.0,
+            "x" : 96.0,
             "y" : 760.0
           }
         }, {
           "componentType" : "FUNNEL",
           "groupIdentifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
-          "identifier" : "7a423195-a794-3164-b7a0-58eed4be600d",
+          "identifier" : "790549c4-1414-3581-b99e-3800c711073f",
           "position" : {
-            "x" : 96.0,
+            "x" : 1240.0,
             "y" : 760.0
           }
         }, {
@@ -1312,11 +1312,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
-            "name" : "succuss",
+            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
+            "name" : "badRequest",
             "position" : {
-              "x" : 552.0,
-              "y" : 1256.0
+              "x" : -184.0,
+              "y" : 408.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -1325,11 +1325,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
-            "name" : "badRequest",
+            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
+            "name" : "succuss",
             "position" : {
-              "x" : -184.0,
-              "y" : 408.0
+              "x" : 552.0,
+              "y" : 1256.0
             },
             "type" : "OUTPUT_PORT"
           } ],
@@ -4659,7 +4659,7 @@
               "name" : "",
               "partitioningAttribute" : "",
               "prioritizers" : [ ],
-              "selectedRelationships" : [ "Retry" ],
+              "selectedRelationships" : [ "Retry", "Failure" ],
               "source" : {
                 "comments" : "",
                 "groupId" : "fc9df3d5-2a97-3141-8f0f-1af3d8f5c91b",
@@ -5049,7 +5049,7 @@
               "type" : "org.apache.nifi.processors.standard.ExecuteStreamCommand",
               "yieldDuration" : "1 sec"
             }, {
-              "autoTerminatedRelationships" : [ "Original", "Failure" ],
+              "autoTerminatedRelationships" : [ "Original" ],
               "bulletinLevel" : "WARN",
               "bundle" : {
                 "artifact" : "nifi-standard-nar",
@@ -5081,7 +5081,7 @@
                 "Use Chunked Encoding" : "false",
                 "Follow Redirects" : "True",
                 "Remote URL" : "#{jobManagerUrl}/jobs/${jobId}/tasks/${taskId}",
-                "Content-Type" : "${mime.type}",
+                "Content-Type" : "application/json",
                 "max-idle-connections" : "5",
                 "Read Timeout" : "15 secs",
                 "Max Length To Put In Attribute" : "256",
@@ -5572,6 +5572,66 @@
               },
               "flowFileExpiration" : "0 sec",
               "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+              "identifier" : "e258d39c-214b-3f62-b780-f5f165272f0a",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "unmatched" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+                "id" : "a8f1835e-3854-3b89-ae88-c86fb1597b3f",
+                "name" : "tansferMetadataToAttribute",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+                "id" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
+                "name" : "done",
+                "type" : "OUTPUT_PORT"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+              "identifier" : "bff248b2-c994-33e1-b6c0-687ea9586c62",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "matched" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+                "id" : "a8f1835e-3854-3b89-ae88-c86fb1597b3f",
+                "name" : "tansferMetadataToAttribute",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+                "id" : "e6c06a1d-4b9a-369f-b684-b4cdc61181a6",
+                "name" : "fail",
+                "type" : "OUTPUT_PORT"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
               "identifier" : "35084f42-e78d-3243-a4c3-e00efb60715e",
               "labelIndex" : 1,
               "loadBalanceCompression" : "DO_NOT_COMPRESS",
@@ -5656,9 +5716,9 @@
               "destination" : {
                 "comments" : "",
                 "groupId" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
-                "id" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
-                "name" : "done",
-                "type" : "OUTPUT_PORT"
+                "id" : "a8f1835e-3854-3b89-ae88-c86fb1597b3f",
+                "name" : "tansferMetadataToAttribute",
+                "type" : "PROCESSOR"
               },
               "flowFileExpiration" : "0 sec",
               "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
@@ -5743,8 +5803,8 @@
               "identifier" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
               "name" : "done",
               "position" : {
-                "x" : 736.0,
-                "y" : 824.0
+                "x" : 728.0,
+                "y" : 1136.0
               },
               "type" : "OUTPUT_PORT"
             }, {
@@ -6809,6 +6869,149 @@
               "concurrentlySchedulableTaskCount" : 1,
               "executionNode" : "ALL",
               "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
+              "identifier" : "a8f1835e-3854-3b89-ae88-c86fb1597b3f",
+              "name" : "tansferMetadataToAttribute",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 672.0,
+                "y" : 872.0
+              },
+              "properties" : {
+                "Enable Unicode Predefined Character Classes" : "false",
+                "Permit Whitespace and Comments in Pattern" : "false",
+                "Enable Unicode-aware Case Folding" : "false",
+                "metadata" : "(.*)",
+                "Enable DOTALL Mode" : "false",
+                "Enable Unix Lines Mode" : "false",
+                "extract-text-enable-named-groups" : "false",
+                "Maximum Buffer Size" : "10 MB",
+                "Enable Canonical Equivalence" : "false",
+                "Enable Case-insensitive Matching" : "false",
+                "Enable Multiline Mode" : "false",
+                "Maximum Capture Group Length" : "1024",
+                "Enable Literal Parsing of the Pattern" : "false",
+                "Character Set" : "UTF-8",
+                "Include Capture Group 0" : "true",
+                "extract-text-enable-repeating-capture-group" : "false"
+              },
+              "propertyDescriptors" : {
+                "Enable Unicode Predefined Character Classes" : {
+                  "displayName" : "Enable Unicode Predefined Character Classes",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Unicode Predefined Character Classes",
+                  "sensitive" : false
+                },
+                "Permit Whitespace and Comments in Pattern" : {
+                  "displayName" : "Permit Whitespace and Comments in Pattern",
+                  "identifiesControllerService" : false,
+                  "name" : "Permit Whitespace and Comments in Pattern",
+                  "sensitive" : false
+                },
+                "Enable Unicode-aware Case Folding" : {
+                  "displayName" : "Enable Unicode-aware Case Folding",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Unicode-aware Case Folding",
+                  "sensitive" : false
+                },
+                "metadata" : {
+                  "displayName" : "metadata",
+                  "identifiesControllerService" : false,
+                  "name" : "metadata",
+                  "sensitive" : false
+                },
+                "Enable DOTALL Mode" : {
+                  "displayName" : "Enable DOTALL Mode",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable DOTALL Mode",
+                  "sensitive" : false
+                },
+                "Enable Unix Lines Mode" : {
+                  "displayName" : "Enable Unix Lines Mode",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Unix Lines Mode",
+                  "sensitive" : false
+                },
+                "extract-text-enable-named-groups" : {
+                  "displayName" : "Enable named group support",
+                  "identifiesControllerService" : false,
+                  "name" : "extract-text-enable-named-groups",
+                  "sensitive" : false
+                },
+                "Maximum Buffer Size" : {
+                  "displayName" : "Maximum Buffer Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum Buffer Size",
+                  "sensitive" : false
+                },
+                "Enable Canonical Equivalence" : {
+                  "displayName" : "Enable Canonical Equivalence",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Canonical Equivalence",
+                  "sensitive" : false
+                },
+                "Enable Case-insensitive Matching" : {
+                  "displayName" : "Enable Case-insensitive Matching",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Case-insensitive Matching",
+                  "sensitive" : false
+                },
+                "Enable Multiline Mode" : {
+                  "displayName" : "Enable Multiline Mode",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Multiline Mode",
+                  "sensitive" : false
+                },
+                "Maximum Capture Group Length" : {
+                  "displayName" : "Maximum Capture Group Length",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum Capture Group Length",
+                  "sensitive" : false
+                },
+                "Enable Literal Parsing of the Pattern" : {
+                  "displayName" : "Enable Literal Parsing of the Pattern",
+                  "identifiesControllerService" : false,
+                  "name" : "Enable Literal Parsing of the Pattern",
+                  "sensitive" : false
+                },
+                "Character Set" : {
+                  "displayName" : "Character Set",
+                  "identifiesControllerService" : false,
+                  "name" : "Character Set",
+                  "sensitive" : false
+                },
+                "Include Capture Group 0" : {
+                  "displayName" : "Include Capture Group 0",
+                  "identifiesControllerService" : false,
+                  "name" : "Include Capture Group 0",
+                  "sensitive" : false
+                },
+                "extract-text-enable-repeating-capture-group" : {
+                  "displayName" : "Enable repeating capture group",
+                  "identifiesControllerService" : false,
+                  "name" : "extract-text-enable-repeating-capture-group",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.ExtractText",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.14.0"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
               "identifier" : "38978e9c-375f-3d98-be60-b0ffff3af4fb",
               "name" : "EvaluateJsonPath",
               "penaltyDuration" : "30 sec",
@@ -6817,9 +7020,9 @@
                 "y" : 608.0
               },
               "properties" : {
-                "Destination" : "flowfile-attribute",
-                "metadata" : "$.parameters",
-                "Return Type" : "scalar",
+                "Destination" : "flowfile-content",
+                "metadata" : "$.parameters.metadata",
+                "Return Type" : "json",
                 "Null Value Representation" : "empty string",
                 "Path Not Found Behavior" : "ignore"
               },
@@ -7503,7 +7706,7 @@
                 "name" : "",
                 "partitioningAttribute" : "",
                 "prioritizers" : [ ],
-                "selectedRelationships" : [ "Retry" ],
+                "selectedRelationships" : [ "Retry", "Failure" ],
                 "source" : {
                   "comments" : "",
                   "groupId" : "720bf18d-1a94-3269-b8d7-141b49ff6a27",
@@ -7984,7 +8187,7 @@
                 "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
                 "yieldDuration" : "1 sec"
               }, {
-                "autoTerminatedRelationships" : [ "Original", "Failure" ],
+                "autoTerminatedRelationships" : [ "Original" ],
                 "bulletinLevel" : "WARN",
                 "bundle" : {
                   "artifact" : "nifi-standard-nar",
@@ -8948,11 +9151,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "bed4ef27-b079-3e53-a4f2-8ff5bd3d43e3",
-                "identifier" : "417ed39e-4d97-3e8b-9100-ce138a6ed11e",
-                "name" : "Success",
+                "identifier" : "25568bc4-a175-3535-b354-78de23177600",
+                "name" : "Failure",
                 "position" : {
-                  "x" : 1736.0,
-                  "y" : 152.0
+                  "x" : 1728.0,
+                  "y" : 368.0
                 },
                 "type" : "OUTPUT_PORT"
               }, {
@@ -8961,11 +9164,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "bed4ef27-b079-3e53-a4f2-8ff5bd3d43e3",
-                "identifier" : "25568bc4-a175-3535-b354-78de23177600",
-                "name" : "Failure",
+                "identifier" : "417ed39e-4d97-3e8b-9100-ce138a6ed11e",
+                "name" : "Success",
                 "position" : {
-                  "x" : 1728.0,
-                  "y" : 368.0
+                  "x" : 1736.0,
+                  "y" : 152.0
                 },
                 "type" : "OUTPUT_PORT"
               } ],
@@ -10015,7 +10218,7 @@
                   "name" : "Module Directory",
                   "resourceDefinition" : {
                     "cardinality" : "MULTIPLE",
-                    "resourceTypes" : [ "DIRECTORY", "FILE" ]
+                    "resourceTypes" : [ "FILE", "DIRECTORY" ]
                   },
                   "sensitive" : false
                 }
@@ -12437,7 +12640,7 @@
                   "idle-timeout" : "5 mins",
                   "Use Chunked Encoding" : "false",
                   "Follow Redirects" : "True",
-                  "Remote URL" : "#{jobManagerUrl}/jobs/${jobId}/tasks/${taskId}",
+                  "Remote URL" : "#{jobManagerUrl}/jobs/${jobId}",
                   "Content-Type" : "${mime.type}",
                   "max-idle-connections" : "5",
                   "Read Timeout" : "15 secs",
@@ -15528,7 +15731,7 @@
               "properties" : {
                 "Store State" : "Do not store state",
                 "canonical-value-lookup-cache-size" : "100",
-                "tilesRelativePath" : "${fileName:replaceAll('(.*/)\\d*/\\d*/\\d*\\..*$',$1)}"
+                "tilesRelativePath" : "${fileName:replaceAll('(.*/)\\d*/\\d*/\\d*\\..*$','$1')}"
               },
               "propertyDescriptors" : {
                 "Delete Attributes Expression" : {
@@ -20539,7 +20742,7 @@
                   "name" : "Module Directory",
                   "resourceDefinition" : {
                     "cardinality" : "MULTIPLE",
-                    "resourceTypes" : [ "DIRECTORY", "FILE" ]
+                    "resourceTypes" : [ "FILE", "DIRECTORY" ]
                   },
                   "sensitive" : false
                 }
@@ -29656,7 +29859,7 @@
                 "name" : "Module Directory",
                 "resourceDefinition" : {
                   "cardinality" : "MULTIPLE",
-                  "resourceTypes" : [ "DIRECTORY", "FILE" ]
+                  "resourceTypes" : [ "FILE", "DIRECTORY" ]
                 },
                 "sensitive" : false
               }
