@@ -2,7 +2,5 @@ flows:
   e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 5, file: raster1.snapshot, comments: fixed
       file received flow, author: anonymous, created: 1636357854506, flowName: raster1,
     flowDesc: ''}
-  ef6f0614-6f6a-40a0-9089-ab3410cc01d4: {ver: 1, file: raster2.snapshot, comments: '',
-    author: anonymous, created: 1636638051533, flowName: raster2, flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
