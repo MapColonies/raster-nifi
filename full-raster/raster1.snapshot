@@ -21,7 +21,7 @@
             "type" : "INPUT_PORT"
           },
           "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "groupIdentifier" : "efe31904-beff-35eb-a262-a7154ae8abdd",
           "identifier" : "73e40770-ffc9-3330-93c6-702606b214b1",
           "labelIndex" : 1,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
@@ -46,14 +46,14 @@
         "flowFileConcurrency" : "UNBOUNDED",
         "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
         "funnels" : [ ],
-        "identifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+        "identifier" : "efe31904-beff-35eb-a262-a7154ae8abdd",
         "inputPorts" : [ ],
         "labels" : [ ],
         "name" : "raster",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 792.0,
-          "y" : 712.0
+          "x" : -48.0,
+          "y" : -240.0
         },
         "processGroups" : [ {
           "comments" : "",
@@ -66,7 +66,7 @@
           "flowFileConcurrency" : "UNBOUNDED",
           "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
           "funnels" : [ ],
-          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "groupIdentifier" : "efe31904-beff-35eb-a262-a7154ae8abdd",
           "identifier" : "a4dac91c-afe0-33a2-adec-0782c0030a0d",
           "inputPorts" : [ ],
           "labels" : [ ],
@@ -98,7 +98,7 @@
           "flowFileConcurrency" : "UNBOUNDED",
           "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
           "funnels" : [ ],
-          "groupIdentifier" : "90460d46-e51e-3c22-9f49-9cc32815f600",
+          "groupIdentifier" : "efe31904-beff-35eb-a262-a7154ae8abdd",
           "identifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
           "inputPorts" : [ ],
           "labels" : [ ],
@@ -117,7 +117,7 @@
             "bucketId" : "83500b58-9f3b-41a2-b6bb-27b9ab594bb6",
             "flowId" : "630b963e-5f88-443f-a4ff-7b3268d7a237",
             "registryUrl" : "http://localhost:18080",
-            "version" : 7
+            "version" : 8
           }
         } ],
         "processors" : [ ],
