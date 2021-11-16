@@ -1,6 +1,6 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 7, file: raster1.snapshot, comments: Update
-      Trigger version, author: anonymous, created: 1636880356935, flowName: raster1,
-    flowDesc: ''}
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 8, file: raster1.snapshot, comments: Update
+      job failure if tasks cannot be created., author: anonymous, created: 1637064183189,
+    flowName: raster1, flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
