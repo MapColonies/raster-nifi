@@ -5880,6 +5880,39 @@
             }, {
               "backPressureDataSizeThreshold" : "1 GB",
               "backPressureObjectThreshold" : 10000,
+              "bends" : [ {
+                "x" : 2264.0,
+                "y" : -80.0
+              } ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
+                "id" : "cc8c5866-6b2e-37a2-8eb0-1552dc9806cd",
+                "name" : "Failure",
+                "type" : "OUTPUT_PORT"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
+              "identifier" : "485102ae-f364-3d3e-8a28-597301963118",
+              "labelIndex" : 0,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "failure" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
+                "id" : "baa680e4-f113-3124-89cd-6eaae42181b3",
+                "name" : "createTocTaskBody",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
               "bends" : [ ],
               "componentType" : "CONNECTION",
               "destination" : {
@@ -5945,26 +5978,26 @@
               "destination" : {
                 "comments" : "",
                 "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "d2093656-b2d0-349c-80a2-cd18702e8397",
-                "name" : "passTOC",
+                "id" : "baa680e4-f113-3124-89cd-6eaae42181b3",
+                "name" : "createTocTaskBody",
                 "type" : "PROCESSOR"
               },
               "flowFileExpiration" : "0 sec",
               "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
-              "identifier" : "21f507a6-b717-3075-8614-9cfc4bc63be1",
+              "identifier" : "b429c6f4-d17b-35c0-a788-eb5cc88d01d9",
               "labelIndex" : 1,
               "loadBalanceCompression" : "DO_NOT_COMPRESS",
               "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
               "name" : "",
               "partitioningAttribute" : "",
               "prioritizers" : [ ],
-              "selectedRelationships" : [ "success" ],
+              "selectedRelationships" : [ "" ],
               "source" : {
                 "comments" : "",
                 "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "fca8d7da-342f-30a7-8b7b-8242a18f990d",
-                "name" : "ReplaceText",
-                "type" : "PROCESSOR"
+                "id" : "58e83c11-a326-3395-8df8-d19102c14892",
+                "name" : "upload",
+                "type" : "INPUT_PORT"
               },
               "zIndex" : 0
             }, {
@@ -6024,39 +6057,6 @@
                 "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
                 "id" : "d1261e78-9309-3df4-aa35-96e15e8f5f18",
                 "name" : "CheckRetryCount",
-                "type" : "PROCESSOR"
-              },
-              "zIndex" : 0
-            }, {
-              "backPressureDataSizeThreshold" : "1 GB",
-              "backPressureObjectThreshold" : 10000,
-              "bends" : [ {
-                "x" : 2192.0,
-                "y" : 8.0
-              } ],
-              "componentType" : "CONNECTION",
-              "destination" : {
-                "comments" : "",
-                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "cc8c5866-6b2e-37a2-8eb0-1552dc9806cd",
-                "name" : "Failure",
-                "type" : "OUTPUT_PORT"
-              },
-              "flowFileExpiration" : "0 sec",
-              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
-              "identifier" : "97a9ceaf-08b8-31c8-9ca6-45d04845af9b",
-              "labelIndex" : 1,
-              "loadBalanceCompression" : "DO_NOT_COMPRESS",
-              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-              "name" : "",
-              "partitioningAttribute" : "",
-              "prioritizers" : [ ],
-              "selectedRelationships" : [ "failure" ],
-              "source" : {
-                "comments" : "",
-                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "fca8d7da-342f-30a7-8b7b-8242a18f990d",
-                "name" : "ReplaceText",
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
@@ -6137,6 +6137,36 @@
               "destination" : {
                 "comments" : "",
                 "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
+                "id" : "d2093656-b2d0-349c-80a2-cd18702e8397",
+                "name" : "passTOC",
+                "type" : "PROCESSOR"
+              },
+              "flowFileExpiration" : "0 sec",
+              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
+              "identifier" : "54a841cc-0c72-3dce-9040-6ca562ad1004",
+              "labelIndex" : 1,
+              "loadBalanceCompression" : "DO_NOT_COMPRESS",
+              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+              "name" : "",
+              "partitioningAttribute" : "",
+              "prioritizers" : [ ],
+              "selectedRelationships" : [ "success" ],
+              "source" : {
+                "comments" : "",
+                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
+                "id" : "baa680e4-f113-3124-89cd-6eaae42181b3",
+                "name" : "createTocTaskBody",
+                "type" : "PROCESSOR"
+              },
+              "zIndex" : 0
+            }, {
+              "backPressureDataSizeThreshold" : "1 GB",
+              "backPressureObjectThreshold" : 10000,
+              "bends" : [ ],
+              "componentType" : "CONNECTION",
+              "destination" : {
+                "comments" : "",
+                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
                 "id" : "e9e9171e-eea2-35a1-aee7-f00916749291",
                 "name" : "SetRetryCounter",
                 "type" : "PROCESSOR"
@@ -6189,36 +6219,6 @@
                 "type" : "PROCESSOR"
               },
               "zIndex" : 0
-            }, {
-              "backPressureDataSizeThreshold" : "1 GB",
-              "backPressureObjectThreshold" : 10000,
-              "bends" : [ ],
-              "componentType" : "CONNECTION",
-              "destination" : {
-                "comments" : "",
-                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "fca8d7da-342f-30a7-8b7b-8242a18f990d",
-                "name" : "ReplaceText",
-                "type" : "PROCESSOR"
-              },
-              "flowFileExpiration" : "0 sec",
-              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
-              "identifier" : "755d5f7f-9399-38ca-bea0-040df612e32e",
-              "labelIndex" : 1,
-              "loadBalanceCompression" : "DO_NOT_COMPRESS",
-              "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-              "name" : "",
-              "partitioningAttribute" : "",
-              "prioritizers" : [ ],
-              "selectedRelationships" : [ "" ],
-              "source" : {
-                "comments" : "",
-                "groupId" : "c449ce77-e4f7-3722-8f66-38a792152641",
-                "id" : "58e83c11-a326-3395-8df8-d19102c14892",
-                "name" : "upload",
-                "type" : "INPUT_PORT"
-              },
-              "zIndex" : 0
             } ],
             "controllerServices" : [ ],
             "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -6238,7 +6238,7 @@
               "identifier" : "58e83c11-a326-3395-8df8-d19102c14892",
               "name" : "upload",
               "position" : {
-                "x" : 416.0,
+                "x" : 424.0,
                 "y" : -256.0
               },
               "type" : "INPUT_PORT"
@@ -6295,7 +6295,7 @@
               "name" : "passTOC",
               "penaltyDuration" : "0 sec",
               "position" : {
-                "x" : 360.0,
+                "x" : 368.0,
                 "y" : 120.0
               },
               "properties" : {
@@ -6310,7 +6310,7 @@
                 "idle-timeout" : "5 mins",
                 "Use Chunked Encoding" : "false",
                 "Follow Redirects" : "True",
-                "Remote URL" : "#{networkSyncUrl}",
+                "Remote URL" : "#{jobManagerUrl}/jobs/${jobId}/tasks",
                 "Content-Type" : "${mime.type}",
                 "max-idle-connections" : "5",
                 "Read Timeout" : "15 secs",
@@ -6552,7 +6552,7 @@
               "name" : "delay",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 384.0,
+                "x" : 368.0,
                 "y" : 776.0
               },
               "properties" : {
@@ -6624,86 +6624,6 @@
               "autoTerminatedRelationships" : [ ],
               "bulletinLevel" : "WARN",
               "bundle" : {
-                "artifact" : "nifi-standard-nar",
-                "group" : "org.apache.nifi",
-                "version" : "1.14.0"
-              },
-              "comments" : "",
-              "componentType" : "PROCESSOR",
-              "concurrentlySchedulableTaskCount" : 1,
-              "executionNode" : "ALL",
-              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
-              "identifier" : "fca8d7da-342f-30a7-8b7b-8242a18f990d",
-              "name" : "ReplaceText",
-              "penaltyDuration" : "30 sec",
-              "position" : {
-                "x" : 360.0,
-                "y" : -104.0
-              },
-              "properties" : {
-                "Regular Expression" : "(?s)(^.*$)",
-                "Replacement Value" : "${toc}",
-                "Evaluation Mode" : "Entire text",
-                "Line-by-Line Evaluation Mode" : "All",
-                "Character Set" : "UTF-8",
-                "Maximum Buffer Size" : "1 MB",
-                "Replacement Strategy" : "Always Replace"
-              },
-              "propertyDescriptors" : {
-                "Regular Expression" : {
-                  "displayName" : "Search Value",
-                  "identifiesControllerService" : false,
-                  "name" : "Regular Expression",
-                  "sensitive" : false
-                },
-                "Replacement Value" : {
-                  "displayName" : "Replacement Value",
-                  "identifiesControllerService" : false,
-                  "name" : "Replacement Value",
-                  "sensitive" : false
-                },
-                "Evaluation Mode" : {
-                  "displayName" : "Evaluation Mode",
-                  "identifiesControllerService" : false,
-                  "name" : "Evaluation Mode",
-                  "sensitive" : false
-                },
-                "Line-by-Line Evaluation Mode" : {
-                  "displayName" : "Line-by-Line Evaluation Mode",
-                  "identifiesControllerService" : false,
-                  "name" : "Line-by-Line Evaluation Mode",
-                  "sensitive" : false
-                },
-                "Character Set" : {
-                  "displayName" : "Character Set",
-                  "identifiesControllerService" : false,
-                  "name" : "Character Set",
-                  "sensitive" : false
-                },
-                "Maximum Buffer Size" : {
-                  "displayName" : "Maximum Buffer Size",
-                  "identifiesControllerService" : false,
-                  "name" : "Maximum Buffer Size",
-                  "sensitive" : false
-                },
-                "Replacement Strategy" : {
-                  "displayName" : "Replacement Strategy",
-                  "identifiesControllerService" : false,
-                  "name" : "Replacement Strategy",
-                  "sensitive" : false
-                }
-              },
-              "runDurationMillis" : 0,
-              "scheduledState" : "ENABLED",
-              "schedulingPeriod" : "0 sec",
-              "schedulingStrategy" : "TIMER_DRIVEN",
-              "style" : { },
-              "type" : "org.apache.nifi.processors.standard.ReplaceText",
-              "yieldDuration" : "1 sec"
-            }, {
-              "autoTerminatedRelationships" : [ ],
-              "bulletinLevel" : "WARN",
-              "bundle" : {
                 "artifact" : "nifi-update-attribute-nar",
                 "group" : "org.apache.nifi",
                 "version" : "1.14.0"
@@ -6763,6 +6683,86 @@
               "schedulingStrategy" : "TIMER_DRIVEN",
               "style" : { },
               "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+              "yieldDuration" : "1 sec"
+            }, {
+              "autoTerminatedRelationships" : [ ],
+              "bulletinLevel" : "WARN",
+              "bundle" : {
+                "artifact" : "nifi-standard-nar",
+                "group" : "org.apache.nifi",
+                "version" : "1.14.0"
+              },
+              "comments" : "",
+              "componentType" : "PROCESSOR",
+              "concurrentlySchedulableTaskCount" : 1,
+              "executionNode" : "ALL",
+              "groupIdentifier" : "c449ce77-e4f7-3722-8f66-38a792152641",
+              "identifier" : "baa680e4-f113-3124-89cd-6eaae42181b3",
+              "name" : "createTocTaskBody",
+              "penaltyDuration" : "30 sec",
+              "position" : {
+                "x" : 368.0,
+                "y" : -120.0
+              },
+              "properties" : {
+                "Regular Expression" : "(?s)(^.*$)",
+                "Replacement Value" : "{\n  \"parameters\": {\n    \"resourceId\": \"${id}\",\n    \"resourceVersion\": \"${version}\",\n\t\"tocData\": ${toc}\n  },\n  \"type\": \"#{syncTriggerTaskType}\"\n}",
+                "Evaluation Mode" : "Entire text",
+                "Line-by-Line Evaluation Mode" : "All",
+                "Character Set" : "UTF-8",
+                "Maximum Buffer Size" : "1 MB",
+                "Replacement Strategy" : "Always Replace"
+              },
+              "propertyDescriptors" : {
+                "Regular Expression" : {
+                  "displayName" : "Search Value",
+                  "identifiesControllerService" : false,
+                  "name" : "Regular Expression",
+                  "sensitive" : false
+                },
+                "Replacement Value" : {
+                  "displayName" : "Replacement Value",
+                  "identifiesControllerService" : false,
+                  "name" : "Replacement Value",
+                  "sensitive" : false
+                },
+                "Evaluation Mode" : {
+                  "displayName" : "Evaluation Mode",
+                  "identifiesControllerService" : false,
+                  "name" : "Evaluation Mode",
+                  "sensitive" : false
+                },
+                "Line-by-Line Evaluation Mode" : {
+                  "displayName" : "Line-by-Line Evaluation Mode",
+                  "identifiesControllerService" : false,
+                  "name" : "Line-by-Line Evaluation Mode",
+                  "sensitive" : false
+                },
+                "Character Set" : {
+                  "displayName" : "Character Set",
+                  "identifiesControllerService" : false,
+                  "name" : "Character Set",
+                  "sensitive" : false
+                },
+                "Maximum Buffer Size" : {
+                  "displayName" : "Maximum Buffer Size",
+                  "identifiesControllerService" : false,
+                  "name" : "Maximum Buffer Size",
+                  "sensitive" : false
+                },
+                "Replacement Strategy" : {
+                  "displayName" : "Replacement Strategy",
+                  "identifiesControllerService" : false,
+                  "name" : "Replacement Strategy",
+                  "sensitive" : false
+                }
+              },
+              "runDurationMillis" : 0,
+              "scheduledState" : "ENABLED",
+              "schedulingPeriod" : "0 sec",
+              "schedulingStrategy" : "TIMER_DRIVEN",
+              "style" : { },
+              "type" : "org.apache.nifi.processors.standard.ReplaceText",
               "yieldDuration" : "1 sec"
             }, {
               "autoTerminatedRelationships" : [ ],
@@ -10715,11 +10715,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "776fa6d9-3609-352b-8f60-47b47df736d3",
-            "identifier" : "295e98aa-76f5-3cad-b358-8256d4aef3ca",
-            "name" : "BadRequest",
+            "identifier" : "c2e19ec8-bb93-3e45-909d-7c9e7bcac5ca",
+            "name" : "Ok",
             "position" : {
-              "x" : 1616.0,
-              "y" : 528.0
+              "x" : 1672.0,
+              "y" : 952.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -10728,11 +10728,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "776fa6d9-3609-352b-8f60-47b47df736d3",
-            "identifier" : "c2e19ec8-bb93-3e45-909d-7c9e7bcac5ca",
-            "name" : "Ok",
+            "identifier" : "295e98aa-76f5-3cad-b358-8256d4aef3ca",
+            "name" : "BadRequest",
             "position" : {
-              "x" : 1672.0,
-              "y" : 952.0
+              "x" : 1616.0,
+              "y" : 528.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -17678,11 +17678,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
-            "name" : "succuss",
+            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
+            "name" : "badRequest",
             "position" : {
-              "x" : 552.0,
-              "y" : 1256.0
+              "x" : -184.0,
+              "y" : 408.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -17691,11 +17691,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
-            "name" : "badRequest",
+            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
+            "name" : "succuss",
             "position" : {
-              "x" : -184.0,
-              "y" : 408.0
+              "x" : 552.0,
+              "y" : 1256.0
             },
             "type" : "OUTPUT_PORT"
           } ],
@@ -22166,11 +22166,11 @@
               "componentType" : "OUTPUT_PORT",
               "concurrentlySchedulableTaskCount" : 1,
               "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
-              "identifier" : "e6c06a1d-4b9a-369f-b684-b4cdc61181a6",
-              "name" : "fail",
+              "identifier" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
+              "name" : "done",
               "position" : {
-                "x" : 1424.0,
-                "y" : 416.0
+                "x" : 728.0,
+                "y" : 1136.0
               },
               "type" : "OUTPUT_PORT"
             }, {
@@ -22179,11 +22179,11 @@
               "componentType" : "OUTPUT_PORT",
               "concurrentlySchedulableTaskCount" : 1,
               "groupIdentifier" : "d550bcd1-2f7c-3119-aae0-f2c9f555d665",
-              "identifier" : "c6ce57ed-90a8-3286-b004-f5902376c4fe",
-              "name" : "done",
+              "identifier" : "e6c06a1d-4b9a-369f-b684-b4cdc61181a6",
+              "name" : "fail",
               "position" : {
-                "x" : 728.0,
-                "y" : 1136.0
+                "x" : 1424.0,
+                "y" : 416.0
               },
               "type" : "OUTPUT_PORT"
             } ],
@@ -32842,6 +32842,11 @@
             "name" : "layerSpecUrl",
             "sensitive" : false,
             "value" : "http://localhost:8082"
+          }, {
+            "description" : "",
+            "name" : "syncTriggerTaskType",
+            "sensitive" : false,
+            "value" : "syncUploadBatch"
           }, {
             "description" : "",
             "name" : "SyncReceivedJobType",
