@@ -6,13 +6,13 @@ flows:
     comments: fixed task id parsing error, author: anonymous, created: 1635054434882,
     flowName: RasterSynchronization, flowDesc: ''}
   630b963e-5f88-443f-a4ff-7b3268d7a237:
-    ver: 15
+    ver: 16
     file: sync3.snapshot
     comments: |-
       Add target to sync proccess.
       Add traget to task and get tile count.
     author: anonymous
-    created: 1639313264463
+    created: 1639313527262
     flowName: sync3
     flowDesc: ''
 layoutVer: 1
