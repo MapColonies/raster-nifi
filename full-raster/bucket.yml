@@ -1,6 +1,6 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 16, file: raster1.snapshot, comments: Replace
-      python script for encode url with perl script., author: anonymous, created: 1639344174052,
-    flowName: raster1, flowDesc: ''}
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 17, file: raster1.snapshot, comments: Remove
+      unused components., author: anonymous, created: 1639344605009, flowName: raster1,
+    flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
