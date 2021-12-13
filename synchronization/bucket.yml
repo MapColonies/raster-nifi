@@ -5,8 +5,8 @@ flows:
   b601da45-e15c-49b5-92f6-7f69054b95f4: {ver: 4, file: RasterSynchronization.snapshot,
     comments: fixed task id parsing error, author: anonymous, created: 1635054434882,
     flowName: RasterSynchronization, flowDesc: ''}
-  630b963e-5f88-443f-a4ff-7b3268d7a237: {ver: 19, file: sync3.snapshot, comments: Remove
-      unused components., author: anonymous, created: 1639344524474, flowName: sync3,
+  630b963e-5f88-443f-a4ff-7b3268d7a237: {ver: 20, file: sync3.snapshot, comments: Fix
+      issues with sync process., author: anonymous, created: 1639354826250, flowName: sync3,
     flowDesc: ''}
 layoutVer: 1
 bucketId: 83500b58-9f3b-41a2-b6bb-27b9ab594bb6

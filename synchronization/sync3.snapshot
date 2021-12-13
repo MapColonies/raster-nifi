@@ -12640,11 +12640,11 @@
               "name" : " getTargetParameterScript",
               "penaltyDuration" : "30 sec",
               "position" : {
-                "x" : 364.0,
+                "x" : 360.0,
                 "y" : -80.0
               },
               "properties" : {
-                "networkSyncUrl" : "#{networkSyncUrl}",
+                "networkSyncUrl" : "target2",
                 "Script Engine" : "ruby",
                 "Script Body" : "flowFile = session.get() \nreturn unless flowFile\n\nnetworkSyncUrl = networkSyncUrl.getValue()\n\n# Encode url\nencodedUrl = URI::encode(networkSyncUrl)\n\n# Add to flowfile\nflowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n\nsession.transfer(flowFile, REL_SUCCESS)"
               },
@@ -12919,8 +12919,8 @@
               "name" : "getTIlesCount",
               "penaltyDuration" : "0 sec",
               "position" : {
-                "x" : 364.0,
-                "y" : 121.34825134277344
+                "x" : 360.0,
+                "y" : 120.0
               },
               "properties" : {
                 "use-etag" : "false",
@@ -18713,7 +18713,7 @@
                 "name" : "update",
                 "position" : {
                   "x" : 416.0,
-                  "y" : -384.0
+                  "y" : -232.0
                 },
                 "type" : "INPUT_PORT"
               } ],
@@ -20035,7 +20035,7 @@
                 },
                 "properties" : {
                   "Regular Expression" : "(?s)(^.*$)",
-                  "Replacement Value" : "{\n  \"jobId\": \"${jobId}\",\n  \"resourceId\": \"${resourceId}\",\n  \"resourceVersion\": \"${version}\",\n  \"layerRelativePath\": \"${layerRelativePath}\",\n  \"target\": \"#{networkSyncUrl}\"\n}",
+                  "Replacement Value" : "{\n  \"jobId\": \"${jobId}\",\n  \"resourceId\": \"${resourceId}\",\n  \"resourceVersion\": \"${version}\",\n  \"layerRelativePath\": \"${layerRelativePath}\",\n  \"target\": \"target2\"\n}",
                   "Evaluation Mode" : "Entire text",
                   "Line-by-Line Evaluation Mode" : "All",
                   "Character Set" : "UTF-8",
@@ -23335,7 +23335,7 @@
                   "comments" : "",
                   "groupId" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                   "id" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                  "name" : "getTask",
+                  "name" : "updateTask",
                   "type" : "PROCESSOR"
                 },
                 "flowFileExpiration" : "0 sec",
@@ -23562,7 +23562,7 @@
                   "comments" : "",
                   "groupId" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                   "id" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                  "name" : "getTask",
+                  "name" : "updateTask",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -23592,7 +23592,7 @@
                   "comments" : "",
                   "groupId" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                   "id" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                  "name" : "getTask",
+                  "name" : "updateTask",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -23682,7 +23682,7 @@
                   "comments" : "",
                   "groupId" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                   "id" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                  "name" : "getTask",
+                  "name" : "updateTask",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -23695,7 +23695,7 @@
                   "comments" : "",
                   "groupId" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                   "id" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                  "name" : "getTask",
+                  "name" : "updateTask",
                   "type" : "PROCESSOR"
                 },
                 "flowFileExpiration" : "0 sec",
@@ -23856,7 +23856,7 @@
                   "y" : -296.0
                 },
                 "properties" : {
-                  "networkSyncUrl" : "#{networkSyncUrl}",
+                  "networkSyncUrl" : "#{target}",
                   "Script Engine" : "ruby",
                   "Script Body" : "flowFile = session.get() \nreturn unless flowFile\n\nnetworkSyncUrl = networkSyncUrl.getValue()\n\n# Encode url\nencodedUrl = URI::encode(networkSyncUrl)\n\n# Add to flowfile\nflowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n\nsession.transfer(flowFile, REL_SUCCESS)"
                 },
@@ -23985,7 +23985,7 @@
                 "executionNode" : "ALL",
                 "groupIdentifier" : "569e6e12-d493-3105-8c42-e90b0bb040c5",
                 "identifier" : "22cf376f-35fa-32cb-8e88-9a592ade5767",
-                "name" : "getTask",
+                "name" : "updateTask",
                 "penaltyDuration" : "0 sec",
                 "position" : {
                   "x" : 368.0,
@@ -24010,7 +24010,7 @@
                   "Max Length To Put In Attribute" : "256",
                   "ignore-response-content" : "false",
                   "Digest Authentication" : "false",
-                  "HTTP Method" : "POST",
+                  "HTTP Method" : "PUT",
                   "Add Response Headers to Request" : "false",
                   "Include Date Header" : "True",
                   "Penalize on \"No Retry\"" : "false"
@@ -24806,6 +24806,36 @@
                 "destination" : {
                   "comments" : "",
                   "groupId" : "d4b48a47-3444-3ec0-adcd-aebe00fe8186",
+                  "id" : "296e3bb2-43c0-39db-9301-dcbe1966821d",
+                  "name" : "Fail",
+                  "type" : "OUTPUT_PORT"
+                },
+                "flowFileExpiration" : "0 sec",
+                "groupIdentifier" : "d4b48a47-3444-3ec0-adcd-aebe00fe8186",
+                "identifier" : "353d22c2-f457-329d-8c1d-3945cd5ae8cc",
+                "labelIndex" : 1,
+                "loadBalanceCompression" : "DO_NOT_COMPRESS",
+                "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+                "name" : "",
+                "partitioningAttribute" : "",
+                "prioritizers" : [ ],
+                "selectedRelationships" : [ "" ],
+                "source" : {
+                  "comments" : "",
+                  "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
+                  "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
+                  "name" : "Failure",
+                  "type" : "OUTPUT_PORT"
+                },
+                "zIndex" : 0
+              }, {
+                "backPressureDataSizeThreshold" : "1 GB",
+                "backPressureObjectThreshold" : 10000,
+                "bends" : [ ],
+                "componentType" : "CONNECTION",
+                "destination" : {
+                  "comments" : "",
+                  "groupId" : "d4b48a47-3444-3ec0-adcd-aebe00fe8186",
                   "id" : "2c28e3c1-34f5-3dde-b5c4-8679b90fdedb",
                   "name" : "ParseTileCount",
                   "type" : "PROCESSOR"
@@ -25030,26 +25060,26 @@
                   "destination" : {
                     "comments" : "",
                     "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                    "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
-                    "name" : "Failure",
-                    "type" : "OUTPUT_PORT"
+                    "id" : "db285cd6-f87b-366c-afd5-997fcdbbfd4d",
+                    "name" : " getTargetParameterScript",
+                    "type" : "PROCESSOR"
                   },
                   "flowFileExpiration" : "0 sec",
                   "groupIdentifier" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                  "identifier" : "772669e2-cc25-3922-a859-ebd4149aba94",
+                  "identifier" : "73957eda-8438-3eb0-9dbc-3d6d3b9bdd80",
                   "labelIndex" : 1,
                   "loadBalanceCompression" : "DO_NOT_COMPRESS",
                   "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
                   "name" : "",
                   "partitioningAttribute" : "",
                   "prioritizers" : [ ],
-                  "selectedRelationships" : [ "failure" ],
+                  "selectedRelationships" : [ "" ],
                   "source" : {
                     "comments" : "",
                     "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                    "name" : " getTargetParameterScript",
-                    "type" : "PROCESSOR"
+                    "id" : "b7b6394d-d058-308d-ace8-241d2710d1e4",
+                    "name" : "get",
+                    "type" : "INPUT_PORT"
                   },
                   "zIndex" : 0
                 }, {
@@ -25066,7 +25096,7 @@
                   },
                   "flowFileExpiration" : "0 sec",
                   "groupIdentifier" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                  "identifier" : "7cb0f87f-cd7e-3ed3-b0dd-85249507d39a",
+                  "identifier" : "e50dfeb0-f553-3ccb-bfbd-8867432af0e3",
                   "labelIndex" : 1,
                   "loadBalanceCompression" : "DO_NOT_COMPRESS",
                   "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -25077,7 +25107,7 @@
                   "source" : {
                     "comments" : "",
                     "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
+                    "id" : "db285cd6-f87b-366c-afd5-997fcdbbfd4d",
                     "name" : " getTargetParameterScript",
                     "type" : "PROCESSOR"
                   },
@@ -25369,26 +25399,26 @@
                   "destination" : {
                     "comments" : "",
                     "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                    "name" : " getTargetParameterScript",
-                    "type" : "PROCESSOR"
+                    "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
+                    "name" : "Failure",
+                    "type" : "OUTPUT_PORT"
                   },
                   "flowFileExpiration" : "0 sec",
                   "groupIdentifier" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                  "identifier" : "9fe60471-f088-339d-8699-3c44685ac1f9",
+                  "identifier" : "c064b9ee-4420-318d-8f3b-845b915d24da",
                   "labelIndex" : 1,
                   "loadBalanceCompression" : "DO_NOT_COMPRESS",
                   "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
                   "name" : "",
                   "partitioningAttribute" : "",
                   "prioritizers" : [ ],
-                  "selectedRelationships" : [ "" ],
+                  "selectedRelationships" : [ "failure" ],
                   "source" : {
                     "comments" : "",
                     "groupId" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                    "id" : "b7b6394d-d058-308d-ace8-241d2710d1e4",
-                    "name" : "get",
-                    "type" : "INPUT_PORT"
+                    "id" : "db285cd6-f87b-366c-afd5-997fcdbbfd4d",
+                    "name" : " getTargetParameterScript",
+                    "type" : "PROCESSOR"
                   },
                   "zIndex" : 0
                 } ],
@@ -25494,78 +25524,6 @@
                   "schedulingStrategy" : "TIMER_DRIVEN",
                   "style" : { },
                   "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
-                  "yieldDuration" : "1 sec"
-                }, {
-                  "autoTerminatedRelationships" : [ ],
-                  "bulletinLevel" : "WARN",
-                  "bundle" : {
-                    "artifact" : "nifi-scripting-nar",
-                    "group" : "org.apache.nifi",
-                    "version" : "1.14.0"
-                  },
-                  "comments" : "",
-                  "componentType" : "PROCESSOR",
-                  "concurrentlySchedulableTaskCount" : 1,
-                  "executionNode" : "ALL",
-                  "groupIdentifier" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
-                  "identifier" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                  "name" : " getTargetParameterScript",
-                  "penaltyDuration" : "30 sec",
-                  "position" : {
-                    "x" : 360.0,
-                    "y" : -80.0
-                  },
-                  "properties" : {
-                    "networkSyncUrl" : "#{networkSyncUrl}",
-                    "Script Engine" : "python",
-                    "Script Body" : "import math\nimport json\nimport urllib.parse\n\nflowFile = session.get() \nif (flowFile != None):\n  networkSyncUrl = networkSyncUrl.getValue()\n\n  # Encode url\n  encodedUrl = urllib.parse.quote(networkSyncUrl)\n  \n  # Add to flowfile\n  flowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n  \n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)"
-                  },
-                  "propertyDescriptors" : {
-                    "Script File" : {
-                      "displayName" : "Script File",
-                      "identifiesControllerService" : false,
-                      "name" : "Script File",
-                      "resourceDefinition" : {
-                        "cardinality" : "SINGLE",
-                        "resourceTypes" : [ "FILE" ]
-                      },
-                      "sensitive" : false
-                    },
-                    "networkSyncUrl" : {
-                      "displayName" : "networkSyncUrl",
-                      "identifiesControllerService" : false,
-                      "name" : "networkSyncUrl",
-                      "sensitive" : false
-                    },
-                    "Script Engine" : {
-                      "displayName" : "Script Engine",
-                      "identifiesControllerService" : false,
-                      "name" : "Script Engine",
-                      "sensitive" : false
-                    },
-                    "Script Body" : {
-                      "displayName" : "Script Body",
-                      "identifiesControllerService" : false,
-                      "name" : "Script Body",
-                      "sensitive" : false
-                    },
-                    "Module Directory" : {
-                      "displayName" : "Module Directory",
-                      "identifiesControllerService" : false,
-                      "name" : "Module Directory",
-                      "resourceDefinition" : {
-                        "cardinality" : "MULTIPLE",
-                        "resourceTypes" : [ "FILE", "DIRECTORY" ]
-                      },
-                      "sensitive" : false
-                    }
-                  },
-                  "runDurationMillis" : 0,
-                  "scheduledState" : "ENABLED",
-                  "schedulingPeriod" : "0 sec",
-                  "schedulingStrategy" : "TIMER_DRIVEN",
-                  "style" : { },
-                  "type" : "org.apache.nifi.processors.script.ExecuteScript",
                   "yieldDuration" : "1 sec"
                 }, {
                   "autoTerminatedRelationships" : [ ],
@@ -25772,6 +25730,78 @@
                   "autoTerminatedRelationships" : [ ],
                   "bulletinLevel" : "WARN",
                   "bundle" : {
+                    "artifact" : "nifi-scripting-nar",
+                    "group" : "org.apache.nifi",
+                    "version" : "1.14.0"
+                  },
+                  "comments" : "",
+                  "componentType" : "PROCESSOR",
+                  "concurrentlySchedulableTaskCount" : 1,
+                  "executionNode" : "ALL",
+                  "groupIdentifier" : "f2057c3e-1c1a-31da-840f-9429fdb07026",
+                  "identifier" : "db285cd6-f87b-366c-afd5-997fcdbbfd4d",
+                  "name" : " getTargetParameterScript",
+                  "penaltyDuration" : "30 sec",
+                  "position" : {
+                    "x" : 360.0,
+                    "y" : -80.0
+                  },
+                  "properties" : {
+                    "networkSyncUrl" : "#{target}",
+                    "Script Engine" : "ruby",
+                    "Script Body" : "flowFile = session.get() \nreturn unless flowFile\n\nnetworkSyncUrl = networkSyncUrl.getValue()\n\n# Encode url\nencodedUrl = URI::encode(networkSyncUrl)\n\n# Add to flowfile\nflowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n\nsession.transfer(flowFile, REL_SUCCESS)"
+                  },
+                  "propertyDescriptors" : {
+                    "Script File" : {
+                      "displayName" : "Script File",
+                      "identifiesControllerService" : false,
+                      "name" : "Script File",
+                      "resourceDefinition" : {
+                        "cardinality" : "SINGLE",
+                        "resourceTypes" : [ "FILE" ]
+                      },
+                      "sensitive" : false
+                    },
+                    "networkSyncUrl" : {
+                      "displayName" : "networkSyncUrl",
+                      "identifiesControllerService" : false,
+                      "name" : "networkSyncUrl",
+                      "sensitive" : false
+                    },
+                    "Script Engine" : {
+                      "displayName" : "Script Engine",
+                      "identifiesControllerService" : false,
+                      "name" : "Script Engine",
+                      "sensitive" : false
+                    },
+                    "Script Body" : {
+                      "displayName" : "Script Body",
+                      "identifiesControllerService" : false,
+                      "name" : "Script Body",
+                      "sensitive" : false
+                    },
+                    "Module Directory" : {
+                      "displayName" : "Module Directory",
+                      "identifiesControllerService" : false,
+                      "name" : "Module Directory",
+                      "resourceDefinition" : {
+                        "cardinality" : "MULTIPLE",
+                        "resourceTypes" : [ "FILE", "DIRECTORY" ]
+                      },
+                      "sensitive" : false
+                    }
+                  },
+                  "runDurationMillis" : 0,
+                  "scheduledState" : "ENABLED",
+                  "schedulingPeriod" : "0 sec",
+                  "schedulingStrategy" : "TIMER_DRIVEN",
+                  "style" : { },
+                  "type" : "org.apache.nifi.processors.script.ExecuteScript",
+                  "yieldDuration" : "1 sec"
+                }, {
+                  "autoTerminatedRelationships" : [ ],
+                  "bulletinLevel" : "WARN",
+                  "bundle" : {
                     "artifact" : "nifi-update-attribute-nar",
                     "group" : "org.apache.nifi",
                     "version" : "1.14.0"
@@ -25864,7 +25894,7 @@
                     "idle-timeout" : "5 mins",
                     "Use Chunked Encoding" : "false",
                     "Follow Redirects" : "True",
-                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${layerId}/${target}",
+                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${resourceId}/${target}",
                     "Content-Type" : "${mime.type}",
                     "max-idle-connections" : "5",
                     "Read Timeout" : "15 secs",
@@ -27797,7 +27827,7 @@
               "type" : "INPUT_PORT"
             } ],
             "labels" : [ ],
-            "name" : "ComplateTask",
+            "name" : "CompleteTask",
             "outputPorts" : [ {
               "allowRemoteAccess" : false,
               "comments" : "",
@@ -34987,7 +35017,7 @@
                   "comments" : "",
                   "groupId" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                   "id" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                  "name" : "updateTask",
+                  "name" : "updateJob",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -35017,7 +35047,7 @@
                   "comments" : "",
                   "groupId" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                   "id" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                  "name" : "updateTask",
+                  "name" : "updateJob",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -35083,7 +35113,7 @@
                   "comments" : "",
                   "groupId" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                   "id" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                  "name" : "updateTask",
+                  "name" : "updateJob",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -35105,7 +35135,7 @@
                   "comments" : "",
                   "groupId" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                   "id" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                  "name" : "updateTask",
+                  "name" : "updateJob",
                   "type" : "PROCESSOR"
                 },
                 "flowFileExpiration" : "0 sec",
@@ -35135,7 +35165,7 @@
                   "comments" : "",
                   "groupId" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                   "id" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                  "name" : "updateTask",
+                  "name" : "updateJob",
                   "type" : "PROCESSOR"
                 },
                 "flowFileExpiration" : "0 sec",
@@ -35487,7 +35517,7 @@
                 "executionNode" : "ALL",
                 "groupIdentifier" : "c73f69c1-7823-3663-9654-07e9bb5ffe24",
                 "identifier" : "44eab679-7425-3514-b641-1b6b5b8e6dd8",
-                "name" : "updateTask",
+                "name" : "updateJob",
                 "penaltyDuration" : "0 sec",
                 "position" : {
                   "x" : 368.0,
@@ -36180,6 +36210,36 @@
                 "destination" : {
                   "comments" : "",
                   "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
+                  "id" : "296e3bb2-43c0-39db-9301-dcbe1966821d",
+                  "name" : "Fail",
+                  "type" : "OUTPUT_PORT"
+                },
+                "flowFileExpiration" : "0 sec",
+                "groupIdentifier" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
+                "identifier" : "df3715a6-f95b-321b-a919-60501d7b609a",
+                "labelIndex" : 1,
+                "loadBalanceCompression" : "DO_NOT_COMPRESS",
+                "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+                "name" : "",
+                "partitioningAttribute" : "",
+                "prioritizers" : [ ],
+                "selectedRelationships" : [ "" ],
+                "source" : {
+                  "comments" : "",
+                  "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
+                  "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
+                  "name" : "Failure",
+                  "type" : "OUTPUT_PORT"
+                },
+                "zIndex" : 0
+              }, {
+                "backPressureDataSizeThreshold" : "1 GB",
+                "backPressureObjectThreshold" : 10000,
+                "bends" : [ ],
+                "componentType" : "CONNECTION",
+                "destination" : {
+                  "comments" : "",
+                  "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
                   "id" : "023f5d76-9aea-3eb3-b914-050887ba2a79",
                   "name" : "checkIfCompleted",
                   "type" : "PROCESSOR"
@@ -36199,36 +36259,6 @@
                   "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
                   "id" : "3cd14508-861d-3d8e-b1a8-ec62c2fd0914",
                   "name" : "ParseTileCount",
-                  "type" : "PROCESSOR"
-                },
-                "zIndex" : 0
-              }, {
-                "backPressureDataSizeThreshold" : "1 GB",
-                "backPressureObjectThreshold" : 10000,
-                "bends" : [ ],
-                "componentType" : "CONNECTION",
-                "destination" : {
-                  "comments" : "",
-                  "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
-                  "id" : "a785e12f-5f7f-3034-8e9a-11d9becfbcea",
-                  "name" : "completed",
-                  "type" : "OUTPUT_PORT"
-                },
-                "flowFileExpiration" : "0 sec",
-                "groupIdentifier" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
-                "identifier" : "379d9220-e6c5-3c07-bb57-c674011a5cc1",
-                "labelIndex" : 1,
-                "loadBalanceCompression" : "DO_NOT_COMPRESS",
-                "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-                "name" : "",
-                "partitioningAttribute" : "",
-                "prioritizers" : [ ],
-                "selectedRelationships" : [ "complated" ],
-                "source" : {
-                  "comments" : "",
-                  "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
-                  "id" : "023f5d76-9aea-3eb3-b914-050887ba2a79",
-                  "name" : "checkIfCompleted",
                   "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
@@ -36290,6 +36320,36 @@
                   "id" : "ef71cbc4-4ee5-3285-b2ce-7af14a81cb10",
                   "name" : "Success",
                   "type" : "OUTPUT_PORT"
+                },
+                "zIndex" : 0
+              }, {
+                "backPressureDataSizeThreshold" : "1 GB",
+                "backPressureObjectThreshold" : 10000,
+                "bends" : [ ],
+                "componentType" : "CONNECTION",
+                "destination" : {
+                  "comments" : "",
+                  "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
+                  "id" : "a785e12f-5f7f-3034-8e9a-11d9becfbcea",
+                  "name" : "completed",
+                  "type" : "OUTPUT_PORT"
+                },
+                "flowFileExpiration" : "0 sec",
+                "groupIdentifier" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
+                "identifier" : "8fcedf1f-249f-32bd-8826-f9314f697ad2",
+                "labelIndex" : 1,
+                "loadBalanceCompression" : "DO_NOT_COMPRESS",
+                "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+                "name" : "",
+                "partitioningAttribute" : "",
+                "prioritizers" : [ ],
+                "selectedRelationships" : [ "completed" ],
+                "source" : {
+                  "comments" : "",
+                  "groupId" : "4cd894bb-9c25-316e-b123-a65bf78009ee",
+                  "id" : "023f5d76-9aea-3eb3-b914-050887ba2a79",
+                  "name" : "checkIfCompleted",
+                  "type" : "PROCESSOR"
                 },
                 "zIndex" : 0
               }, {
@@ -36494,26 +36554,26 @@
                   "destination" : {
                     "comments" : "",
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
-                    "name" : "Failure",
-                    "type" : "OUTPUT_PORT"
+                    "id" : "79757014-be02-3a19-96f1-4826ed2f5eef",
+                    "name" : " getTargetParameterScript",
+                    "type" : "PROCESSOR"
                   },
                   "flowFileExpiration" : "0 sec",
                   "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                  "identifier" : "772669e2-cc25-3922-a859-ebd4149aba94",
+                  "identifier" : "26cb554b-4312-30a3-b628-916dc427b20e",
                   "labelIndex" : 1,
                   "loadBalanceCompression" : "DO_NOT_COMPRESS",
                   "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
                   "name" : "",
                   "partitioningAttribute" : "",
                   "prioritizers" : [ ],
-                  "selectedRelationships" : [ "failure" ],
+                  "selectedRelationships" : [ "" ],
                   "source" : {
                     "comments" : "",
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                    "name" : " getTargetParameterScript",
-                    "type" : "PROCESSOR"
+                    "id" : "b7b6394d-d058-308d-ace8-241d2710d1e4",
+                    "name" : "get",
+                    "type" : "INPUT_PORT"
                   },
                   "zIndex" : 0
                 }, {
@@ -36543,36 +36603,6 @@
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
                     "id" : "a57f4fc6-8ffb-3a7f-8d4b-e1e131113a10",
                     "name" : "getTIlesCount",
-                    "type" : "PROCESSOR"
-                  },
-                  "zIndex" : 0
-                }, {
-                  "backPressureDataSizeThreshold" : "1 GB",
-                  "backPressureObjectThreshold" : 10000,
-                  "bends" : [ ],
-                  "componentType" : "CONNECTION",
-                  "destination" : {
-                    "comments" : "",
-                    "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "a57f4fc6-8ffb-3a7f-8d4b-e1e131113a10",
-                    "name" : "getTIlesCount",
-                    "type" : "PROCESSOR"
-                  },
-                  "flowFileExpiration" : "0 sec",
-                  "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                  "identifier" : "7cb0f87f-cd7e-3ed3-b0dd-85249507d39a",
-                  "labelIndex" : 1,
-                  "loadBalanceCompression" : "DO_NOT_COMPRESS",
-                  "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-                  "name" : "",
-                  "partitioningAttribute" : "",
-                  "prioritizers" : [ ],
-                  "selectedRelationships" : [ "success" ],
-                  "source" : {
-                    "comments" : "",
-                    "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                    "name" : " getTargetParameterScript",
                     "type" : "PROCESSOR"
                   },
                   "zIndex" : 0
@@ -36663,6 +36693,36 @@
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
                     "id" : "d0c86d99-75b2-3bcc-85eb-832638af1663",
                     "name" : "deleteCounter",
+                    "type" : "PROCESSOR"
+                  },
+                  "zIndex" : 0
+                }, {
+                  "backPressureDataSizeThreshold" : "1 GB",
+                  "backPressureObjectThreshold" : 10000,
+                  "bends" : [ ],
+                  "componentType" : "CONNECTION",
+                  "destination" : {
+                    "comments" : "",
+                    "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
+                    "id" : "a57f4fc6-8ffb-3a7f-8d4b-e1e131113a10",
+                    "name" : "getTIlesCount",
+                    "type" : "PROCESSOR"
+                  },
+                  "flowFileExpiration" : "0 sec",
+                  "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
+                  "identifier" : "a4ca5e66-e816-399b-bd87-508947d96239",
+                  "labelIndex" : 1,
+                  "loadBalanceCompression" : "DO_NOT_COMPRESS",
+                  "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+                  "name" : "",
+                  "partitioningAttribute" : "",
+                  "prioritizers" : [ ],
+                  "selectedRelationships" : [ "success" ],
+                  "source" : {
+                    "comments" : "",
+                    "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
+                    "id" : "79757014-be02-3a19-96f1-4826ed2f5eef",
+                    "name" : " getTargetParameterScript",
                     "type" : "PROCESSOR"
                   },
                   "zIndex" : 0
@@ -36863,26 +36923,26 @@
                   "destination" : {
                     "comments" : "",
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
-                    "name" : " getTargetParameterScript",
-                    "type" : "PROCESSOR"
+                    "id" : "75c112c8-a4c3-335e-aeb4-a44c4f3179cd",
+                    "name" : "Failure",
+                    "type" : "OUTPUT_PORT"
                   },
                   "flowFileExpiration" : "0 sec",
                   "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                  "identifier" : "9fe60471-f088-339d-8699-3c44685ac1f9",
+                  "identifier" : "6915031e-224d-32a3-8ede-3fee0503bb5c",
                   "labelIndex" : 1,
                   "loadBalanceCompression" : "DO_NOT_COMPRESS",
                   "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
                   "name" : "",
                   "partitioningAttribute" : "",
                   "prioritizers" : [ ],
-                  "selectedRelationships" : [ "" ],
+                  "selectedRelationships" : [ "failure" ],
                   "source" : {
                     "comments" : "",
                     "groupId" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                    "id" : "b7b6394d-d058-308d-ace8-241d2710d1e4",
-                    "name" : "get",
-                    "type" : "INPUT_PORT"
+                    "id" : "79757014-be02-3a19-96f1-4826ed2f5eef",
+                    "name" : " getTargetParameterScript",
+                    "type" : "PROCESSOR"
                   },
                   "zIndex" : 0
                 } ],
@@ -36948,51 +37008,6 @@
                   "autoTerminatedRelationships" : [ ],
                   "bulletinLevel" : "WARN",
                   "bundle" : {
-                    "artifact" : "nifi-standard-nar",
-                    "group" : "org.apache.nifi",
-                    "version" : "1.14.0"
-                  },
-                  "comments" : "",
-                  "componentType" : "PROCESSOR",
-                  "concurrentlySchedulableTaskCount" : 1,
-                  "executionNode" : "ALL",
-                  "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                  "identifier" : "bf65215c-fa90-3d61-9c7e-0f45520b3300",
-                  "name" : "CheckRetryCount",
-                  "penaltyDuration" : "30 sec",
-                  "position" : {
-                    "x" : 368.0,
-                    "y" : 560.0
-                  },
-                  "properties" : {
-                    "Routing Strategy" : "Route to Property name",
-                    "retry" : "${retry.count:gt(#{maxHttpRetries})}"
-                  },
-                  "propertyDescriptors" : {
-                    "Routing Strategy" : {
-                      "displayName" : "Routing Strategy",
-                      "identifiesControllerService" : false,
-                      "name" : "Routing Strategy",
-                      "sensitive" : false
-                    },
-                    "retry" : {
-                      "displayName" : "retry",
-                      "identifiesControllerService" : false,
-                      "name" : "retry",
-                      "sensitive" : false
-                    }
-                  },
-                  "runDurationMillis" : 0,
-                  "scheduledState" : "ENABLED",
-                  "schedulingPeriod" : "0 sec",
-                  "schedulingStrategy" : "TIMER_DRIVEN",
-                  "style" : { },
-                  "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
-                  "yieldDuration" : "1 sec"
-                }, {
-                  "autoTerminatedRelationships" : [ ],
-                  "bulletinLevel" : "WARN",
-                  "bundle" : {
                     "artifact" : "nifi-scripting-nar",
                     "group" : "org.apache.nifi",
                     "version" : "1.14.0"
@@ -37002,17 +37017,17 @@
                   "concurrentlySchedulableTaskCount" : 1,
                   "executionNode" : "ALL",
                   "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
-                  "identifier" : "40cb8ec5-ae44-3ea3-97b3-3c61de7a576f",
+                  "identifier" : "79757014-be02-3a19-96f1-4826ed2f5eef",
                   "name" : " getTargetParameterScript",
                   "penaltyDuration" : "30 sec",
                   "position" : {
                     "x" : 360.0,
-                    "y" : -80.0
+                    "y" : -72.0
                   },
                   "properties" : {
-                    "networkSyncUrl" : "#{networkSyncUrl}",
-                    "Script Engine" : "python",
-                    "Script Body" : "import math\nimport json\nimport urllib.parse\n\nflowFile = session.get() \nif (flowFile != None):\n  networkSyncUrl = networkSyncUrl.getValue()\n\n  # Encode url\n  encodedUrl = urllib.parse.quote(networkSyncUrl)\n  \n  # Add to flowfile\n  flowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n  \n  session.transfer(flowFile, REL_SUCCESS)\nelse:\n  session.transfer(flowFile, REL_FAILURE)"
+                    "networkSyncUrl" : "#{target}",
+                    "Script Engine" : "ruby",
+                    "Script Body" : "flowFile = session.get() \nreturn unless flowFile\n\nnetworkSyncUrl = networkSyncUrl.getValue()\n\n# Encode url\nencodedUrl = URI::encode(networkSyncUrl)\n\n# Add to flowfile\nflowFile = session.putAttribute(flowFile, 'target', encodedUrl)\n\nsession.transfer(flowFile, REL_SUCCESS)"
                   },
                   "propertyDescriptors" : {
                     "Script File" : {
@@ -37060,6 +37075,51 @@
                   "schedulingStrategy" : "TIMER_DRIVEN",
                   "style" : { },
                   "type" : "org.apache.nifi.processors.script.ExecuteScript",
+                  "yieldDuration" : "1 sec"
+                }, {
+                  "autoTerminatedRelationships" : [ ],
+                  "bulletinLevel" : "WARN",
+                  "bundle" : {
+                    "artifact" : "nifi-standard-nar",
+                    "group" : "org.apache.nifi",
+                    "version" : "1.14.0"
+                  },
+                  "comments" : "",
+                  "componentType" : "PROCESSOR",
+                  "concurrentlySchedulableTaskCount" : 1,
+                  "executionNode" : "ALL",
+                  "groupIdentifier" : "0ce437f1-287f-3b8e-aa18-4ec7e0ff99c5",
+                  "identifier" : "bf65215c-fa90-3d61-9c7e-0f45520b3300",
+                  "name" : "CheckRetryCount",
+                  "penaltyDuration" : "30 sec",
+                  "position" : {
+                    "x" : 368.0,
+                    "y" : 560.0
+                  },
+                  "properties" : {
+                    "Routing Strategy" : "Route to Property name",
+                    "retry" : "${retry.count:gt(#{maxHttpRetries})}"
+                  },
+                  "propertyDescriptors" : {
+                    "Routing Strategy" : {
+                      "displayName" : "Routing Strategy",
+                      "identifiesControllerService" : false,
+                      "name" : "Routing Strategy",
+                      "sensitive" : false
+                    },
+                    "retry" : {
+                      "displayName" : "retry",
+                      "identifiesControllerService" : false,
+                      "name" : "retry",
+                      "sensitive" : false
+                    }
+                  },
+                  "runDurationMillis" : 0,
+                  "scheduledState" : "ENABLED",
+                  "schedulingPeriod" : "0 sec",
+                  "schedulingStrategy" : "TIMER_DRIVEN",
+                  "style" : { },
+                  "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
                   "yieldDuration" : "1 sec"
                 }, {
                   "autoTerminatedRelationships" : [ ],
@@ -37358,7 +37418,7 @@
                     "idle-timeout" : "5 mins",
                     "Use Chunked Encoding" : "false",
                     "Follow Redirects" : "True",
-                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${layerId}/${target}",
+                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${resourceId}/${target}",
                     "Content-Type" : "${mime.type}",
                     "max-idle-connections" : "5",
                     "Read Timeout" : "15 secs",
@@ -38827,20 +38887,20 @@
                   "y" : 1168.0
                 },
                 "properties" : {
-                  "complated" : "${tilesCount:ge(${expectedTilesCount})}",
-                  "Routing Strategy" : "Route to Property name"
+                  "Routing Strategy" : "Route to Property name",
+                  "completed" : "${tileCount:ge(${expectedTilesCount})}"
                 },
                 "propertyDescriptors" : {
-                  "complated" : {
-                    "displayName" : "complated",
-                    "identifiesControllerService" : false,
-                    "name" : "complated",
-                    "sensitive" : false
-                  },
                   "Routing Strategy" : {
                     "displayName" : "Routing Strategy",
                     "identifiesControllerService" : false,
                     "name" : "Routing Strategy",
+                    "sensitive" : false
+                  },
+                  "completed" : {
+                    "displayName" : "completed",
+                    "identifiesControllerService" : false,
+                    "name" : "completed",
                     "sensitive" : false
                   }
                 },
@@ -39562,6 +39622,11 @@
             "name" : "netSyncTaskerUrl",
             "sensitive" : false,
             "value" : "http://localhost:8083"
+          }, {
+            "description" : "",
+            "name" : "target",
+            "sensitive" : false,
+            "value" : "value"
           }, {
             "description" : "",
             "name" : "maxHttpRetries",
