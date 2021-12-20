@@ -1,6 +1,5 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 22, file: raster1.snapshot, comments: increased
-      max metadata length, author: anonymous, created: 1639988716754, flowName: raster1,
-    flowDesc: ''}
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 23, file: raster1.snapshot, comments: parsed
+      res string, author: anonymous, created: 1639990852250, flowName: raster1, flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
