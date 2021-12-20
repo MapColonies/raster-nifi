@@ -1,6 +1,6 @@
 flows:
-  57511524-295d-41c6-85a2-1155ba821f06: {ver: 8, file: rsterIngestion.snapshot, comments: parsed
-      res string, author: anonymous, created: 1639990840915, flowName: rsterIngestion,
+  57511524-295d-41c6-85a2-1155ba821f06: {ver: 9, file: rsterIngestion.snapshot, comments: escaped
+      strings for map proxy api, author: anonymous, created: 1639992035215, flowName: rsterIngestion,
     flowDesc: raster ingestion flow}
 layoutVer: 1
 bucketId: 869899cc-0ff9-4b9e-bd84-b6cf402912de

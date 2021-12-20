@@ -3838,7 +3838,7 @@
               },
               "properties" : {
                 "Regular Expression" : "(?s)(^.*$)",
-                "Replacement Value" : "{\n  \"cacheType\": \"#{mapProxycacheType}\",\n  \"name\": \"${layerName}\",\n  \"tilesPath\": \"${tilesRelativePath}\",\n  \"maxZoomLevel\": ${layerZoom},\n  \"description\": \"${layerDescription}\"\n}",
+                "Replacement Value" : "{\n  \"cacheType\": \"#{mapProxycacheType}\",\n  \"name\": \"${layerName:escapeJson()}\",\n  \"tilesPath\": \"${tilesRelativePath}\",\n  \"maxZoomLevel\": ${layerZoom},\n  \"description\": \"${layerDescription:escapeJson()}\"\n}",
                 "Evaluation Mode" : "Entire text",
                 "Line-by-Line Evaluation Mode" : "All",
                 "Character Set" : "UTF-8",
