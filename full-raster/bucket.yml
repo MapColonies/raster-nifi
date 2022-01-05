@@ -1,6 +1,6 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 24, file: raster1.snapshot, comments: escaped
-      strings for map proxy api, author: anonymous, created: 1639992042432, flowName: raster1,
-    flowDesc: ''}
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 25, file: raster1.snapshot, comments: Change
+      Job initial status to In-Progress., author: anonymous, created: 1641372101875,
+    flowName: raster1, flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
