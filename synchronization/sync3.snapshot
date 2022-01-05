@@ -21732,7 +21732,7 @@
                 },
                 "properties" : {
                   "Regular Expression" : "(?s)(^.*$)",
-                  "Replacement Value" : "{\n  \"resourceId\": \"${resourceId}\",\n  \"version\": \"${version}\",\n  \"status\": \"In-Progress\",\n  \"parameters\": {\n\t\"operation\": \"${operation}\",\n     \"productType\": \"${productType}\",\n\t\"layerRelativePath\": \"${layerRelativePath}\"\n  },\n  \"type\": \"#{syncTriggerJobType}\"\n}",
+                  "Replacement Value" : "{\n  \"resourceId\": \"${resourceId}\",\n  \"version\": \"${version}\",\n  \"status\": \"In-Progress\",\n  \"productType\": \"${productType}\",\n  \"parameters\": {\n\t\"operation\": \"${operation}\",\n     \"productType\": \"${productType}\",\n\t\"layerRelativePath\": \"${layerRelativePath}\"\n  },\n  \"type\": \"#{syncTriggerJobType}\"\n}",
                   "Evaluation Mode" : "Entire text",
                   "Line-by-Line Evaluation Mode" : "All",
                   "Character Set" : "UTF-8",
