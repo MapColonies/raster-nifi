@@ -11402,7 +11402,7 @@
               },
               "properties" : {
                 "Regular Expression" : "(?s)(^.*$)",
-                "Replacement Value" : "{\n  \"status\": \"Completed\",\n  \"percentage\": 100,\n  \"reason\": \"All tasks completed, waiting for toc to be sent\"\n}",
+                "Replacement Value" : "{\n  \"status\": \"In-Progress\",\n  \"percentage\": 99,\n  \"reason\": \"All tasks completed, waiting for toc to be sent\"\n}",
                 "Evaluation Mode" : "Entire text",
                 "Line-by-Line Evaluation Mode" : "All",
                 "Character Set" : "UTF-8",
