@@ -79,7 +79,7 @@
             "bucketId" : "869899cc-0ff9-4b9e-bd84-b6cf402912de",
             "flowId" : "57511524-295d-41c6-85a2-1155ba821f06",
             "registryUrl" : "http://localhost:18080",
-            "version" : 10
+            "version" : 11
           }
         }, {
           "comments" : "",
