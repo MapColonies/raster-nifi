@@ -1,6 +1,6 @@
 flows:
-  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 30, file: raster1.snapshot, comments: 'fix:
-      layer name generation', author: anonymous, created: 1641469995109, flowName: raster1,
+  e011ef90-1b52-418e-b12c-3634c7290f71: {ver: 31, file: raster1.snapshot, comments: fixed
+      layer relative path parsing, author: anonymous, created: 1641811035747, flowName: raster1,
     flowDesc: ''}
 layoutVer: 1
 bucketId: cf51db41-6b4d-4968-8ca5-fe61a3dcfe66
