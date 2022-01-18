@@ -834,17 +834,17 @@
         }, {
           "componentType" : "FUNNEL",
           "groupIdentifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
-          "identifier" : "7a423195-a794-3164-b7a0-58eed4be600d",
+          "identifier" : "790549c4-1414-3581-b99e-3800c711073f",
           "position" : {
-            "x" : 96.0,
+            "x" : 1240.0,
             "y" : 768.0
           }
         }, {
           "componentType" : "FUNNEL",
           "groupIdentifier" : "f4b1efce-5784-31bc-bc78-215359e7251a",
-          "identifier" : "790549c4-1414-3581-b99e-3800c711073f",
+          "identifier" : "7a423195-a794-3164-b7a0-58eed4be600d",
           "position" : {
-            "x" : 1240.0,
+            "x" : 96.0,
             "y" : 768.0
           }
         }, {
@@ -6387,11 +6387,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "0cd79b35-815e-3670-9909-39c741d8bbfd",
-                "identifier" : "d2248ca3-51e0-377f-906e-14ae45f25d97",
-                "name" : "failed",
+                "identifier" : "7fa486b2-2221-3074-80bc-8ebefc1d1925",
+                "name" : "InternalServerError",
                 "position" : {
-                  "x" : 736.7311045015131,
-                  "y" : 784.5376517267225
+                  "x" : 736.0,
+                  "y" : 48.0
                 },
                 "type" : "OUTPUT_PORT"
               }, {
@@ -6400,11 +6400,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "0cd79b35-815e-3670-9909-39c741d8bbfd",
-                "identifier" : "7fa486b2-2221-3074-80bc-8ebefc1d1925",
-                "name" : "InternalServerError",
+                "identifier" : "d2248ca3-51e0-377f-906e-14ae45f25d97",
+                "name" : "failed",
                 "position" : {
-                  "x" : 736.0,
-                  "y" : 48.0
+                  "x" : 736.7311045015131,
+                  "y" : 784.5376517267225
                 },
                 "type" : "OUTPUT_PORT"
               }, {
@@ -15968,11 +15968,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "776fa6d9-3609-352b-8f60-47b47df736d3",
-            "identifier" : "c2e19ec8-bb93-3e45-909d-7c9e7bcac5ca",
-            "name" : "Ok",
+            "identifier" : "295e98aa-76f5-3cad-b358-8256d4aef3ca",
+            "name" : "BadRequest",
             "position" : {
-              "x" : 1672.0,
-              "y" : 952.0
+              "x" : 1616.0,
+              "y" : 528.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -15981,11 +15981,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "776fa6d9-3609-352b-8f60-47b47df736d3",
-            "identifier" : "295e98aa-76f5-3cad-b358-8256d4aef3ca",
-            "name" : "BadRequest",
+            "identifier" : "c2e19ec8-bb93-3e45-909d-7c9e7bcac5ca",
+            "name" : "Ok",
             "position" : {
-              "x" : 1616.0,
-              "y" : 528.0
+              "x" : 1672.0,
+              "y" : 952.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -23189,11 +23189,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
-            "name" : "succuss",
+            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
+            "name" : "badRequest",
             "position" : {
-              "x" : 552.0,
-              "y" : 1256.0
+              "x" : 2080.0,
+              "y" : 384.0
             },
             "type" : "OUTPUT_PORT"
           }, {
@@ -23202,11 +23202,11 @@
             "componentType" : "OUTPUT_PORT",
             "concurrentlySchedulableTaskCount" : 1,
             "groupIdentifier" : "1f7af71c-e148-3444-8325-bcb83fef461e",
-            "identifier" : "a4cca783-8be1-3609-91e9-486a2522879c",
-            "name" : "badRequest",
+            "identifier" : "9796dd10-d0b7-3af2-8800-ac2570256f83",
+            "name" : "succuss",
             "position" : {
-              "x" : 2080.0,
-              "y" : 384.0
+              "x" : 552.0,
+              "y" : 1256.0
             },
             "type" : "OUTPUT_PORT"
           } ],
@@ -26021,7 +26021,7 @@
                     "idle-timeout" : "5 mins",
                     "Use Chunked Encoding" : "false",
                     "Follow Redirects" : "True",
-                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${resourceId}/${target}",
+                    "Remote URL" : "#{layerSpecUrl}/tilesCount/${resourceId}-${version}/${target}",
                     "Content-Type" : "${mime.type}",
                     "max-idle-connections" : "5",
                     "Read Timeout" : "15 secs",
@@ -32271,11 +32271,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "bed4ef27-b079-3e53-a4f2-8ff5bd3d43e3",
-                "identifier" : "417ed39e-4d97-3e8b-9100-ce138a6ed11e",
-                "name" : "Success",
+                "identifier" : "25568bc4-a175-3535-b354-78de23177600",
+                "name" : "Failure",
                 "position" : {
-                  "x" : 1736.0,
-                  "y" : 152.0
+                  "x" : 1728.0,
+                  "y" : 368.0
                 },
                 "type" : "OUTPUT_PORT"
               }, {
@@ -32284,11 +32284,11 @@
                 "componentType" : "OUTPUT_PORT",
                 "concurrentlySchedulableTaskCount" : 1,
                 "groupIdentifier" : "bed4ef27-b079-3e53-a4f2-8ff5bd3d43e3",
-                "identifier" : "25568bc4-a175-3535-b354-78de23177600",
-                "name" : "Failure",
+                "identifier" : "417ed39e-4d97-3e8b-9100-ce138a6ed11e",
+                "name" : "Success",
                 "position" : {
-                  "x" : 1728.0,
-                  "y" : 368.0
+                  "x" : 1736.0,
+                  "y" : 152.0
                 },
                 "type" : "OUTPUT_PORT"
               } ],
@@ -33769,11 +33769,11 @@
               "componentType" : "OUTPUT_PORT",
               "concurrentlySchedulableTaskCount" : 1,
               "groupIdentifier" : "9ce76aed-5a0c-3630-8d6e-27eeb1a5cb8c",
-              "identifier" : "7176153f-653b-3c84-a8f8-e5828860e53a",
-              "name" : "HttpError",
+              "identifier" : "c7fdce66-3759-3108-adef-8b33ea4045ba",
+              "name" : "inProgress",
               "position" : {
-                "x" : 1376.0,
-                "y" : 1366.78125
+                "x" : 632.0,
+                "y" : 1632.0
               },
               "type" : "OUTPUT_PORT"
             }, {
@@ -33782,11 +33782,11 @@
               "componentType" : "OUTPUT_PORT",
               "concurrentlySchedulableTaskCount" : 1,
               "groupIdentifier" : "9ce76aed-5a0c-3630-8d6e-27eeb1a5cb8c",
-              "identifier" : "c7fdce66-3759-3108-adef-8b33ea4045ba",
-              "name" : "inProgress",
+              "identifier" : "7176153f-653b-3c84-a8f8-e5828860e53a",
+              "name" : "HttpError",
               "position" : {
-                "x" : 632.0,
-                "y" : 1632.0
+                "x" : 1376.0,
+                "y" : 1366.78125
               },
               "type" : "OUTPUT_PORT"
             } ],
